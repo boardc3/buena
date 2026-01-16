@@ -34,6 +34,7 @@ export default function MapboxNeighborhood() {
   const mapObjRef = useRef(null)
   const markersRef = useRef([])
   const overlayReadyRef = useRef(false)
+  const resizeRafRef = useRef(null)
 
   const categories = PROPERTY.map.categories
   const [activeCategoryId, setActiveCategoryId] = useState(categories[0]?.id)
@@ -193,10 +194,32 @@ export default function MapboxNeighborhood() {
 
     mapObjRef.current = map
     return () => {
+      if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current)
       map.remove()
       mapObjRef.current = null
     }
   }, [token])
+
+  // Ensure map resizes correctly when layout changes (panel toggle, mobile orientation, etc.)
+  useEffect(() => {
+    const map = mapObjRef.current
+    if (!map) return
+    const onResize = () => {
+      if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current)
+      resizeRafRef.current = requestAnimationFrame(() => map.resize())
+    }
+    window.addEventListener('resize', onResize)
+    onResize()
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  useEffect(() => {
+    const map = mapObjRef.current
+    if (!map) return
+    // panelOpen affects bounds padding; also triggers layout width changes on desktop
+    if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current)
+    resizeRafRef.current = requestAnimationFrame(() => map.resize())
+  }, [panelOpen])
 
   // Markers + camera sync
   useEffect(() => {
@@ -345,11 +368,107 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
         </motion.div>
 
         <div className="relative rounded-3xl overflow-hidden border hairline surface">
-          <div className="relative">
-            {/* Full-bleed map canvas */}
+          {/* MOBILE/TABLET: map first, panel below (so the map is always visible) */}
+          <div className="lg:hidden">
+            <div className="relative">
+              <div ref={mapRef} className="h-[72vh] min-h-[560px] w-full" />
+              <div className="absolute top-5 left-5 z-20 rounded-2xl border hairline bg-black/45 backdrop-blur-xl p-2">
+                <div className="flex">
+                  <button
+                    onClick={() => setViewMode('estate')}
+                    className={clsx(
+                      'px-4 py-2 rounded-xl text-sm font-semibold transition',
+                      viewMode === 'estate' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                    )}
+                  >
+                    Estate
+                  </button>
+                  <button
+                    onClick={() => setViewMode('valley')}
+                    className={clsx(
+                      'px-4 py-2 rounded-xl text-sm font-semibold transition',
+                      viewMode === 'valley' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                    )}
+                  >
+                    Valley
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-t hairline bg-black/35 backdrop-blur-xl">
+              <div className="p-6">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold text-white/85">Curate</div>
+                  {error ? <div className="text-sm text-red-200">{error}</div> : null}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {categories.map((c) => (
+                    <button
+                      key={c.id}
+                      onClick={() => setActiveCategoryId(c.id)}
+                      className={clsx(
+                        'px-4 py-2 rounded-full text-sm font-semibold border transition',
+                        c.id === activeCategoryId
+                          ? 'bg-luxury-gold text-black border-luxury-gold'
+                          : 'bg-white/5 text-white/80 border-white/10 hover:bg-white/10',
+                      )}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-6">
+                  <div className="text-xs uppercase tracking-[0.22em] text-white/50 mb-3">Places</div>
+                  <div className="space-y-2">
+                    {listItems.map((item) => {
+                      const isSelected = selectedQuery === item.query
+                      const distance = item.distanceMi ? `${item.distanceMi.toFixed(1)} mi` : '…'
+                      return (
+                        <button
+                          key={item.query}
+                          onClick={() => setSelectedQuery(item.query)}
+                          className={clsx(
+                            'w-full text-left rounded-2xl p-4 border transition flex items-start justify-between gap-4',
+                            isSelected ? 'border-luxury-gold bg-white/5' : 'border-white/10 hover:border-white/16 bg-white/0',
+                          )}
+                        >
+                          <div className="min-w-0">
+                            <div className="font-semibold text-white/90 truncate">{item.name}</div>
+                            <div className="text-sm text-white/55 truncate">
+                              {item.note ? (
+                                <>
+                                  <span className="text-white/70">{item.note}</span>
+                                  <span className="text-white/35"> · </span>
+                                </>
+                              ) : null}
+                              {distance}
+                            </div>
+                          </div>
+                          <a
+                            href={directionsUrl(PROPERTY.address, item.query)}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="shrink-0 inline-flex items-center gap-2 text-sm text-white/70 hover:text-white"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+                <div className="mt-6 text-xs text-white/45">Curated pins are approximate.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* DESKTOP: expansive map with collapsible side panel */}
+          <div className="hidden lg:block relative">
             <div ref={mapRef} className="h-[82vh] min-h-[760px] w-full" />
 
-            {/* View toggle */}
             <div className="absolute top-6 left-6 z-20 rounded-2xl border hairline bg-black/45 backdrop-blur-xl p-2">
               <div className="flex">
                 <button
@@ -373,7 +492,6 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
               </div>
             </div>
 
-            {/* Collapsible side panel */}
             <div
               className={clsx(
                 'absolute top-0 right-0 z-20 h-full w-full max-w-[420px] border-l hairline bg-black/55 backdrop-blur-xl transition-transform duration-300',
@@ -451,9 +569,7 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
                     })}
                   </div>
                 </div>
-                <div className="mt-6 text-xs text-white/45">
-                  Map is Mapbox GL with 3D buildings. Curated pins are approximate.
-                </div>
+                <div className="mt-6 text-xs text-white/45">Curated pins are approximate.</div>
               </div>
             </div>
           </div>
