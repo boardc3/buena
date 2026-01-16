@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-white antialiased bg-[#07080B];
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Mapbox (keep attribution/logo visible; style it discreetly) */
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  opacity: 0.55;
+  transition: opacity 200ms ease;
+}
+.mapboxgl-ctrl-bottom-left:hover,
+.mapboxgl-ctrl-bottom-right:hover {
+  opacity: 0.9;
+}
+
+.mapboxgl-ctrl-attrib {
+  background: rgba(0,0,0,0.35) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 999px !important;
+  padding: 6px 10px !important;
+  backdrop-filter: blur(14px);
+}
+.mapboxgl-ctrl-attrib a {
+  color: rgba(255,255,255,0.65) !important;
+}
+
+.mapboxgl-ctrl-group {
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  background: rgba(0,0,0,0.35) !important;
+}
+.mapboxgl-ctrl-group button {
+  width: 40px !important;
+  height: 40px !important;
+}
+.mapboxgl-ctrl-group button span {
+  filter: invert(1) brightness(1.2);
+  opacity: 0.85;
+}
+
+.mapboxgl-popup-content {
+  border-radius: 16px !important;
+  background: rgba(0, 0, 0, 0.72) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(18px);
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Bespoke Mapbox markers */
+.bv-marker {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+.bv-marker::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(212,175,55,0.18), rgba(212,175,55,0) 60%);
+  filter: blur(0.2px);
+}
+.bv-marker__core {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+  border: 2px solid rgba(0,0,0,0.55);
+}
+.bv-marker--home .bv-marker__core {
+  background: #D4AF37;
+}
+.bv-marker--poi .bv-marker__core {
+  background: rgba(255,255,255,0.92);
+}
+.bv-marker--selected::before {
+  inset: -18px;
+  background: radial-gradient(circle, rgba(212,175,55,0.28), rgba(212,175,55,0) 62%);
+}
+
+/* Quiet-luxury surfaces */
+.surface {
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(212, 175, 55, 0.14), rgba(0,0,0,0) 60%),
+              radial-gradient(900px 600px at 80% 10%, rgba(255, 255, 255, 0.06), rgba(0,0,0,0) 55%),
+              linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));
+}
+
+.hairline {
+  border-color: rgba(255,255,255,0.10);
+}
+
+.muted {
+  color: rgba(255,255,255,0.72);
+}
