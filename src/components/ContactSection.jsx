@@ -9,13 +9,21 @@ export default function ContactSection() {
     phone: '',
     message: '',
   })
+  const [submitState, setSubmitState] = useState('idle') // 'idle' | 'submitting' | 'success'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission - connect to your backend/email service
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will contact you soon.')
+    if (submitState === 'submitting') return
+    setSubmitState('submitting')
+
+    // Non-blocking “send” placeholder. Replace with your email/CRM integration.
+    await new Promise((r) => setTimeout(r, 250))
+
+    setSubmitState('success')
     setFormData({ name: '', email: '', phone: '', message: '' })
+
+    // Auto-reset the success state after a moment (keeps UX clean).
+    window.setTimeout(() => setSubmitState('idle'), 3000)
   }
 
   const handleChange = (e) => {
@@ -53,6 +61,14 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
           >
             <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border hairline surface p-8">
+              {submitState === 'success' && (
+                <div className="rounded-2xl border border-luxury-gold/25 bg-black/30 px-5 py-4 text-white/85">
+                  <div className="font-semibold text-white">Request received.</div>
+                  <div className="text-sm text-white/65 mt-1">
+                    We’ll confirm availability and follow up shortly.
+                  </div>
+                </div>
+              )}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-white/70 mb-2">
                   Full Name
@@ -115,10 +131,11 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full bg-luxury-gold text-black py-4 px-6 rounded-full font-semibold hover:brightness-110 transition flex items-center justify-center gap-2"
+                disabled={submitState === 'submitting'}
+                className="w-full bg-luxury-gold text-black py-4 px-6 rounded-full font-semibold hover:brightness-110 transition flex items-center justify-center gap-2 disabled:opacity-70 disabled:hover:brightness-100"
               >
                 <Send className="w-5 h-5" />
-                Request Tour
+                {submitState === 'submitting' ? 'Sending…' : 'Request Tour'}
               </button>
             </form>
           </motion.div>
