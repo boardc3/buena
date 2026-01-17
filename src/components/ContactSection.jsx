@@ -11,19 +11,20 @@ export default function ContactSection() {
   })
   const [submitState, setSubmitState] = useState('idle') // 'idle' | 'submitting' | 'success'
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if (submitState === 'submitting') return
     setSubmitState('submitting')
 
-    // Non-blocking “send” placeholder. Replace with your email/CRM integration.
-    await new Promise((r) => setTimeout(r, 250))
-
-    setSubmitState('success')
-    setFormData({ name: '', email: '', phone: '', message: '' })
-
-    // Auto-reset the success state after a moment (keeps UX clean).
-    window.setTimeout(() => setSubmitState('idle'), 3000)
+    // Keep the event handler fast: schedule the next UI updates outside the input event.
+    // Replace this block with a real async send (fetch) later.
+    window.requestAnimationFrame(() => {
+      window.setTimeout(() => {
+        setSubmitState('success')
+        setFormData({ name: '', email: '', phone: '', message: '' })
+        window.setTimeout(() => setSubmitState('idle'), 3000)
+      }, 200)
+    })
   }
 
   const handleChange = (e) => {
