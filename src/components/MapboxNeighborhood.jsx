@@ -284,7 +284,7 @@ export default function MapboxNeighborhood() {
 
     // Update radius overlay around property (~2 miles by default)
     if (overlayReadyRef.current) {
-      const radiusMeters = viewMode === 'close' ? 8046.72 : 40233.6 // 5mi vs 25mi
+      const radiusMeters = viewMode === 'close' ? 8046.72 : 19312.1 // 5mi vs ~12mi (keeps everything “in town”)
       const radiusFeature = circleGeoJSON([propertyPoint.lng, propertyPoint.lat], radiusMeters)
       map.getSource('bv-radius')?.setData({ type: 'FeatureCollection', features: [radiusFeature] })
     }

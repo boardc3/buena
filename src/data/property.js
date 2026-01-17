@@ -88,9 +88,9 @@ export const PROPERTY = {
             note: 'Iconic resort + spa',
           },
           {
-            name: 'The Global Ambassador',
-            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
-            note: 'New luxury hotel + wellness',
+            name: 'The Hermosa Inn',
+            query: '5532 N Palo Cristi Rd, Paradise Valley, AZ 85253',
+            note: 'Boutique resort',
           },
         ],
       },
@@ -98,21 +98,6 @@ export const PROPERTY = {
         id: 'golf',
         label: 'Golf (Top 5)',
         items: [
-          {
-            name: 'TPC Scottsdale',
-            query: '17020 N Hayden Rd, Scottsdale, AZ 85255',
-            note: 'Stadium Course',
-          },
-          {
-            name: 'Grayhawk Golf Club',
-            query: '8620 E Thompson Peak Pkwy, Scottsdale, AZ 85255',
-            note: 'Talon + Raptor',
-          },
-          {
-            name: 'Gainey Ranch Golf Club',
-            query: '7600 E Gainey Club Dr, Scottsdale, AZ 85258',
-            note: 'Private access',
-          },
           {
             name: 'Camelback Golf Club',
             query: '7847 N Mockingbird Ln, Scottsdale, AZ 85253',
@@ -122,6 +107,21 @@ export const PROPERTY = {
             name: 'Paradise Valley Country Club',
             query: '7101 N Tatum Blvd, Paradise Valley, AZ 85253',
             note: 'Exclusive private club',
+          },
+          {
+            name: 'The Phoenician Golf Club',
+            query: '6000 E Camelback Rd, Scottsdale, AZ 85251',
+            note: 'Resort golf',
+          },
+          {
+            name: 'Mountain Shadows Golf Club',
+            query: '5445 E Lincoln Dr, Paradise Valley, AZ 85253',
+            note: 'Short course',
+          },
+          {
+            name: 'Arizona Biltmore Golf Club',
+            query: '2818 E Missouri Ave, Phoenix, AZ 85016',
+            note: 'Classic desert golf',
           },
         ],
       },
@@ -135,19 +135,19 @@ export const PROPERTY = {
             note: 'Gucci · LV · Cartier',
           },
           {
-            name: 'Kierland Commons',
-            query: '15210 N Scottsdale Rd, Scottsdale, AZ 85254',
-            note: 'Open-air luxury',
-          },
-          {
-            name: 'Scottsdale Quarter',
-            query: '15279 N Scottsdale Rd, Scottsdale, AZ 85254',
-            note: 'Fashion + dining',
-          },
-          {
             name: 'Old Town Scottsdale',
             query: 'N Scottsdale Rd, Scottsdale, AZ 85251',
             note: 'Boutiques + galleries',
+          },
+          {
+            name: 'Scottsdale Waterfront',
+            query: '7135 E Camelback Rd, Scottsdale, AZ 85251',
+            note: 'Walkable luxury',
+          },
+          {
+            name: 'Biltmore Fashion Park',
+            query: '2502 E Camelback Rd, Phoenix, AZ 85016',
+            note: 'Luxury retail',
           },
         ],
       },
@@ -161,9 +161,9 @@ export const PROPERTY = {
             note: 'Steak + seafood',
           },
           {
-            name: 'Le Âme',
-            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
-            note: 'French-inspired steakhouse',
+            name: 'Steak 44',
+            query: '5101 N 44th St, Phoenix, AZ 85018',
+            note: 'Power dinner',
           },
           {
             name: 'Maple & Ash',
@@ -187,29 +187,29 @@ export const PROPERTY = {
         label: 'Hiking (Top 5)',
         items: [
           {
-            name: 'McDowell Sonoran Preserve Gateway Loop',
-            query: '18333 N Thompson Peak Pkwy, Scottsdale, AZ 85255',
-            note: 'Scenic desert loop',
-          },
-          {
-            name: 'Tom’s Thumb Trail',
-            query: '23015 N 128th St, Scottsdale, AZ 85255',
-            note: 'Iconic McDowell hike',
-          },
-          {
-            name: 'Pinnacle Peak Trail',
-            query: '26802 N 102nd Way, Scottsdale, AZ 85262',
-            note: 'Moderate desert views',
-          },
-          {
             name: 'Camelback Mountain Echo Canyon Trail',
             query: '4925 E McDonald Dr, Phoenix, AZ 85018',
             note: 'Steep summit',
           },
           {
-            name: 'Lost Dog Wash Trail',
-            query: '12601 N 124th St, Scottsdale, AZ 85259',
-            note: 'Easy-moderate',
+            name: 'Camelback Mountain Cholla Trail',
+            query: '6131 E Cholla Ln, Phoenix, AZ 85018',
+            note: 'Alternate route',
+          },
+          {
+            name: 'Piestewa Peak Summit Trail',
+            query: '2701 E Squaw Peak Dr, Phoenix, AZ 85016',
+            note: 'City + mountain views',
+          },
+          {
+            name: 'Papago Park (Hole-in-the-Rock)',
+            query: '625 N Galvin Pkwy, Phoenix, AZ 85008',
+            note: 'Iconic desert landmark',
+          },
+          {
+            name: 'Desert Botanical Garden',
+            query: '1201 N Galvin Pkwy, Phoenix, AZ 85008',
+            note: '50,000+ desert plants',
           },
         ],
       },
@@ -254,16 +254,6 @@ export const PROPERTY = {
             note: 'Private PK–12',
           },
           {
-            name: 'Brophy College Preparatory',
-            query: '4701 N Central Ave, Phoenix, AZ 85012',
-            note: 'Jesuit (6–12)',
-          },
-          {
-            name: 'Xavier College Preparatory',
-            query: '4710 N 5th St, Phoenix, AZ 85012',
-            note: 'Catholic (9–12)',
-          },
-          {
             name: 'Notre Dame Preparatory High School',
             query: '9701 E Bell Rd, Scottsdale, AZ 85260',
             note: 'Catholic (9–12)',
@@ -277,6 +267,16 @@ export const PROPERTY = {
             name: 'Cherokee Elementary School',
             query: '8801 N 56th St, Paradise Valley, AZ 85253',
             note: 'Nearby public',
+          },
+          {
+            name: 'Cocopah Middle School',
+            query: '7500 E Jackrabbit Rd, Scottsdale, AZ 85250',
+            note: 'Top public',
+          },
+          {
+            name: 'Jones-Gordon School',
+            query: '4540 N 44th St, Phoenix, AZ 85018',
+            note: 'Private (K–8)',
           },
         ],
       },
