@@ -163,7 +163,15 @@ export const PROPERTY = {
           {
             name: 'Steak 44',
             query: '5101 N 44th St, Phoenix, AZ 85018',
-            note: 'Power dinner',
+            note: 'Arcadia (Phoenix) · power dinner',
+            meta: {
+              rating: 4.7,
+              reviews: 4294,
+              price: '$100+',
+              type: 'Fine dining steakhouse',
+              locatedIn: 'Camelback Village Center',
+              phone: '(602) 271-4400',
+            },
           },
           {
             name: 'Maple & Ash',
