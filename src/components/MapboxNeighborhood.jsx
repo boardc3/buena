@@ -43,7 +43,7 @@ export default function MapboxNeighborhood() {
   const [selectedQuery, setSelectedQuery] = useState(null)
   const [error, setError] = useState(null)
   const [panelOpen, setPanelOpen] = useState(true)
-  const [viewMode, setViewMode] = useState('valley') // 'estate' | 'valley'
+  const [viewMode, setViewMode] = useState('all') // 'close' | 'all'
 
   const activeCategory = useMemo(
     () => categories.find((c) => c.id === activeCategoryId) ?? categories[0],
@@ -52,6 +52,7 @@ export default function MapboxNeighborhood() {
   const activeItems = activeCategory?.items ?? []
   const allItems = useMemo(() => categories.flatMap((c) => c.items ?? []), [categories])
   const allQueries = useMemo(() => Array.from(new Set(allItems.map((i) => i.query))), [allItems])
+  const visibleItems = useMemo(() => (viewMode === 'all' ? allItems : activeItems), [allItems, activeItems, viewMode])
 
   // Preload geocodes once (cached in localStorage) so switching categories feels instant.
   useEffect(() => {
@@ -91,7 +92,7 @@ export default function MapboxNeighborhood() {
         if (cancelled) return
         setPropertyPoint(center)
 
-        // Geocode category items
+        // Geocode active category items (so selection is always valid)
         const toGeocode = activeItems.map((i) => i.query)
         const results = await Promise.allSettled(toGeocode.map((q) => mapboxGeocode(q, token)))
         if (cancelled) return
@@ -250,8 +251,8 @@ export default function MapboxNeighborhood() {
       .addTo(map)
     markersRef.current.push(homeMarker)
 
-    // POI markers
-    activeItems.forEach((item) => {
+    // POI markers (expanded view can show everything)
+    visibleItems.forEach((item) => {
       const p = poiPoints[item.query]
       if (!p) return
       const el = buildMarkerEl('poi', selectedQuery === item.query)
@@ -273,7 +274,7 @@ export default function MapboxNeighborhood() {
 
     // Fit camera
     const bounds = new mapboxgl.LngLatBounds([propertyPoint.lng, propertyPoint.lat], [propertyPoint.lng, propertyPoint.lat])
-    activeItems.forEach((item) => {
+    visibleItems.forEach((item) => {
       const p = poiPoints[item.query]
       if (!p) return
       bounds.extend([p.lng, p.lat])
@@ -283,11 +284,11 @@ export default function MapboxNeighborhood() {
 
     // Update radius overlay around property (~2 miles by default)
     if (overlayReadyRef.current) {
-      const radiusMeters = viewMode === 'estate' ? 1609.34 : 8046.72 // 1mi vs 5mi
+      const radiusMeters = viewMode === 'close' ? 8046.72 : 40233.6 // 5mi vs 25mi
       const radiusFeature = circleGeoJSON([propertyPoint.lng, propertyPoint.lat], radiusMeters)
       map.getSource('bv-radius')?.setData({ type: 'FeatureCollection', features: [radiusFeature] })
     }
-  }, [activeItems, poiPoints, propertyPoint, selectedQuery, panelOpen, viewMode])
+  }, [visibleItems, poiPoints, propertyPoint, selectedQuery, panelOpen, viewMode])
 
   useEffect(() => {
     const map = mapObjRef.current
@@ -298,7 +299,7 @@ export default function MapboxNeighborhood() {
     if (!p) return
     map.flyTo({
       center: [p.lng, p.lat],
-      zoom: viewMode === 'estate' ? 14.8 : 13.8,
+      zoom: viewMode === 'close' ? 14.2 : 12.9,
       speed: 0.9,
       curve: 1.2,
       essential: true,
@@ -375,22 +376,22 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
               <div className="absolute top-5 left-5 z-20 rounded-2xl border hairline bg-black/45 backdrop-blur-xl p-2">
                 <div className="flex">
                   <button
-                    onClick={() => setViewMode('estate')}
+                    onClick={() => setViewMode('close')}
                     className={clsx(
                       'px-4 py-2 rounded-xl text-sm font-semibold transition',
-                      viewMode === 'estate' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                      viewMode === 'close' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
                     )}
                   >
-                    Estate
+                    Close
                   </button>
                   <button
-                    onClick={() => setViewMode('valley')}
+                    onClick={() => setViewMode('all')}
                     className={clsx(
                       'px-4 py-2 rounded-xl text-sm font-semibold transition',
-                      viewMode === 'valley' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                      viewMode === 'all' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
                     )}
                   >
-                    Valley
+                    All
                   </button>
                 </div>
               </div>
@@ -472,22 +473,22 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
             <div className="absolute top-6 left-6 z-20 rounded-2xl border hairline bg-black/45 backdrop-blur-xl p-2">
               <div className="flex">
                 <button
-                  onClick={() => setViewMode('estate')}
+                  onClick={() => setViewMode('close')}
                   className={clsx(
                     'px-4 py-2 rounded-xl text-sm font-semibold transition',
-                    viewMode === 'estate' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                    viewMode === 'close' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
                   )}
                 >
-                  Estate
+                  Close
                 </button>
                 <button
-                  onClick={() => setViewMode('valley')}
+                  onClick={() => setViewMode('all')}
                   className={clsx(
                     'px-4 py-2 rounded-xl text-sm font-semibold transition',
-                    viewMode === 'valley' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
+                    viewMode === 'all' ? 'bg-luxury-gold text-black' : 'text-white/75 hover:text-white',
                   )}
                 >
-                  Valley
+                  All
                 </button>
               </div>
             </div>

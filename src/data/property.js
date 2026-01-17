@@ -64,98 +64,220 @@ export const PROPERTY = {
     centerQuery: '5441 E Via Buena Vista, Paradise Valley, AZ 85253',
     categories: [
       {
-        id: 'top',
-        label: 'Top Picks',
-        items: [
-          { name: 'Scottsdale Airport (SDL)', query: 'Scottsdale Airport', note: 'Private aviation' },
-          { name: 'Sky Harbor (PHX)', query: 'Phoenix Sky Harbor International Airport', note: 'Commercial' },
-          { name: 'The Phoenician', query: 'The Phoenician Scottsdale', note: 'Resort + golf' },
-          { name: 'Sanctuary Camelback Mountain', query: 'Sanctuary Camelback Mountain Resort and Spa', note: 'Spa' },
-          { name: 'Scottsdale Fashion Square', query: 'Scottsdale Fashion Square', note: 'Luxury retail' },
-          { name: 'Steak 44', query: 'Steak 44 Scottsdale', note: 'Power dinner' },
-        ],
-      },
-      {
         id: 'resorts',
-        label: 'Resorts & Spas',
+        label: 'Resorts & Spas (Top 5)',
         items: [
-          { name: 'JW Marriott Scottsdale Camelback Inn Resort & Spa', query: 'Camelback Inn Resort & Spa Paradise Valley AZ', note: 'Spa + golf' },
-          { name: 'The Phoenician', query: 'The Phoenician Scottsdale', note: 'Resort landmark' },
-          { name: 'Sanctuary Camelback Mountain', query: 'Sanctuary Camelback Mountain Resort and Spa', note: 'Ultra-luxe spa' },
-          { name: 'Andaz Scottsdale Resort & Bungalows', query: 'Andaz Scottsdale Resort and Bungalows', note: 'Design-forward' },
-          { name: 'Hermosa Inn', query: 'The Hermosa Inn Paradise Valley AZ', note: 'Boutique' },
+          {
+            name: 'Sanctuary Camelback Mountain Resort & Spa',
+            query: '5700 E McDonald Dr, Paradise Valley, AZ 85253',
+            note: 'Luxury resort + acclaimed spa',
+          },
+          {
+            name: 'JW Marriott Scottsdale Camelback Inn Resort & Spa',
+            query: '5402 E Lincoln Dr, Scottsdale, AZ 85253',
+            note: 'Historic desert resort',
+          },
+          {
+            name: 'Omni Scottsdale Resort & Spa at Montelucia',
+            query: '4949 E Lincoln Dr, Scottsdale, AZ 85253',
+            note: 'Joya Spa',
+          },
+          {
+            name: 'The Phoenician',
+            query: '6000 E Camelback Rd, Scottsdale, AZ 85251',
+            note: 'Iconic resort + spa',
+          },
+          {
+            name: 'The Global Ambassador',
+            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
+            note: 'New luxury hotel + wellness',
+          },
         ],
       },
       {
-        id: 'clubs',
-        label: 'Golf & Clubs',
+        id: 'golf',
+        label: 'Golf (Top 5)',
         items: [
-          { name: 'Paradise Valley Country Club', query: 'Paradise Valley Country Club', note: 'Private club' },
-          { name: 'Silverleaf Club', query: 'Silverleaf Club Scottsdale', note: 'Private club' },
-          { name: 'Arizona Biltmore Golf Club', query: 'Arizona Biltmore Golf Club', note: 'Golf' },
+          {
+            name: 'TPC Scottsdale',
+            query: '17020 N Hayden Rd, Scottsdale, AZ 85255',
+            note: 'Stadium Course',
+          },
+          {
+            name: 'Grayhawk Golf Club',
+            query: '8620 E Thompson Peak Pkwy, Scottsdale, AZ 85255',
+            note: 'Talon + Raptor',
+          },
+          {
+            name: 'Gainey Ranch Golf Club',
+            query: '7600 E Gainey Club Dr, Scottsdale, AZ 85258',
+            note: 'Private access',
+          },
+          {
+            name: 'Camelback Golf Club',
+            query: '7847 N Mockingbird Ln, Scottsdale, AZ 85253',
+            note: 'Padre + Ambiente',
+          },
+          {
+            name: 'Paradise Valley Country Club',
+            query: '7101 N Tatum Blvd, Paradise Valley, AZ 85253',
+            note: 'Exclusive private club',
+          },
         ],
       },
       {
         id: 'shopping',
         label: 'Luxury Shopping',
         items: [
-          { name: 'Scottsdale Fashion Square', query: 'Scottsdale Fashion Square', note: 'Neiman + Nordstrom' },
-          { name: 'Old Town Scottsdale', query: 'Old Town Scottsdale', note: 'Nightlife hub' },
-          { name: 'Kierland Commons', query: 'Kierland Commons Scottsdale', note: 'Outdoor luxury' },
+          {
+            name: 'Scottsdale Fashion Square',
+            query: '7014 E Camelback Rd, Scottsdale, AZ 85251',
+            note: 'Gucci · LV · Cartier',
+          },
+          {
+            name: 'Kierland Commons',
+            query: '15210 N Scottsdale Rd, Scottsdale, AZ 85254',
+            note: 'Open-air luxury',
+          },
+          {
+            name: 'Scottsdale Quarter',
+            query: '15279 N Scottsdale Rd, Scottsdale, AZ 85254',
+            note: 'Fashion + dining',
+          },
+          {
+            name: 'Old Town Scottsdale',
+            query: 'N Scottsdale Rd, Scottsdale, AZ 85251',
+            note: 'Boutiques + galleries',
+          },
         ],
       },
       {
         id: 'dining',
-        label: 'Dining',
+        label: 'Luxury Dining (Top 5)',
         items: [
-          { name: 'Steak 44', query: 'Steak 44 Scottsdale', note: 'Power dinner' },
-          { name: 'Ocean 44', query: 'Ocean 44 Scottsdale', note: 'Seafood + scene' },
-          { name: 'Nobu Scottsdale', query: 'Nobu Restaurant Scottsdale', note: 'Night out' },
-          { name: 'Elements (Sanctuary)', query: 'elements sanctuary camelback mountain', note: 'Views + dinner' },
+          {
+            name: 'Ocean 44',
+            query: '4748 N Goldwater Blvd, Scottsdale, AZ 85251',
+            note: 'Steak + seafood',
+          },
+          {
+            name: 'Le Âme',
+            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
+            note: 'French-inspired steakhouse',
+          },
+          {
+            name: 'Maple & Ash',
+            query: '7135 E Camelback Rd Ste 130, Scottsdale, AZ 85251',
+            note: 'Modern steakhouse',
+          },
+          {
+            name: 'Toca Madera Scottsdale',
+            query: '4736 N Goldwater Blvd, Scottsdale, AZ 85251',
+            note: 'Modern Mexican',
+          },
+          {
+            name: 'Catch Scottsdale',
+            query: '7014 E Camelback Rd Ste 612, Scottsdale, AZ 85251',
+            note: 'Seafood + sushi',
+          },
         ],
       },
       {
-        id: 'outdoors',
-        label: 'Outdoors',
+        id: 'hiking',
+        label: 'Hiking (Top 5)',
         items: [
-          { name: 'Camelback Mountain (Echo Canyon)', query: 'Echo Canyon Trailhead Camelback Mountain', note: 'Sunrise hike' },
-          { name: 'Camelback Mountain (Cholla)', query: 'Cholla Trailhead Camelback Mountain', note: 'Alternate route' },
-          { name: 'Desert Botanical Garden', query: 'Desert Botanical Garden Phoenix', note: 'Iconic desert' },
+          {
+            name: 'McDowell Sonoran Preserve Gateway Loop',
+            query: '18333 N Thompson Peak Pkwy, Scottsdale, AZ 85255',
+            note: 'Scenic desert loop',
+          },
+          {
+            name: 'Tom’s Thumb Trail',
+            query: '23015 N 128th St, Scottsdale, AZ 85255',
+            note: 'Iconic McDowell hike',
+          },
+          {
+            name: 'Pinnacle Peak Trail',
+            query: '26802 N 102nd Way, Scottsdale, AZ 85262',
+            note: 'Moderate desert views',
+          },
+          {
+            name: 'Camelback Mountain Echo Canyon Trail',
+            query: '4925 E McDonald Dr, Phoenix, AZ 85018',
+            note: 'Steep summit',
+          },
+          {
+            name: 'Lost Dog Wash Trail',
+            query: '12601 N 124th St, Scottsdale, AZ 85259',
+            note: 'Easy-moderate',
+          },
         ],
       },
       {
         id: 'culture',
-        label: 'Culture',
+        label: 'Culture (Top 5)',
         items: [
-          { name: 'Musical Instrument Museum (MIM)', query: 'Musical Instrument Museum Phoenix', note: 'World-class museum' },
-          { name: 'Scottsdale Museum of Contemporary Art', query: 'Scottsdale Museum of Contemporary Art', note: 'Modern art' },
-        ],
-      },
-      {
-        id: 'medical',
-        label: 'Premium Medical',
-        items: [
-          { name: 'Mayo Clinic Hospital', query: 'Mayo Clinic Hospital Phoenix', note: 'Medical' },
-          { name: 'HonorHealth Scottsdale Shea Medical Center', query: 'HonorHealth Scottsdale Shea Medical Center', note: 'Medical' },
+          {
+            name: 'Taliesin West',
+            query: '12621 N Frank Lloyd Wright Blvd, Scottsdale, AZ 85259',
+            note: 'Frank Lloyd Wright',
+          },
+          {
+            name: 'Western Spirit: Scottsdale’s Museum of the West',
+            query: '3830 N Marshall Way, Scottsdale, AZ 85251',
+            note: 'Museum of the West',
+          },
+          {
+            name: 'Scottsdale Museum of Contemporary Art',
+            query: '7374 E 2nd St, Scottsdale, AZ 85251',
+            note: 'Modern + design',
+          },
+          {
+            name: 'Scottsdale Center for the Performing Arts',
+            query: '7380 E 2nd St, Scottsdale, AZ 85251',
+            note: 'Live performance',
+          },
+          {
+            name: 'Wonderspaces Arizona',
+            query: '7014 E Camelback Rd, Scottsdale, AZ 85251',
+            note: 'Immersive art',
+          },
         ],
       },
       {
         id: 'schools',
-        label: 'Schools',
+        label: 'Schools (Buyer-relevant)',
         items: [
-          { name: 'Cherokee Elementary School', query: 'Cherokee Elementary School Scottsdale AZ', note: 'Nearby public' },
-          { name: 'Cocopah Middle School', query: 'Cocopah Middle School Scottsdale AZ', note: 'Top-rated public' },
-          { name: 'Chaparral High School', query: 'Chaparral High School Scottsdale AZ', note: 'Top-rated public' },
-          { name: 'Phoenix Country Day School', query: 'Phoenix Country Day School Paradise Valley AZ', note: 'Private' },
-          { name: 'Jones-Gordon School', query: 'Jones-Gordon School Paradise Valley AZ', note: 'Private' },
-        ],
-      },
-      {
-        id: 'travel',
-        label: 'Travel',
-        items: [
-          { name: 'Sky Harbor Airport (PHX)', query: 'Phoenix Sky Harbor International Airport', note: 'Airport' },
-          { name: 'Scottsdale Airport (SDL)', query: 'Scottsdale Airport', note: 'Private aviation' },
+          {
+            name: 'Phoenix Country Day School',
+            query: '3901 E Stanford Dr, Paradise Valley, AZ 85253',
+            note: 'Private PK–12',
+          },
+          {
+            name: 'Brophy College Preparatory',
+            query: '4701 N Central Ave, Phoenix, AZ 85012',
+            note: 'Jesuit (6–12)',
+          },
+          {
+            name: 'Xavier College Preparatory',
+            query: '4710 N 5th St, Phoenix, AZ 85012',
+            note: 'Catholic (9–12)',
+          },
+          {
+            name: 'Notre Dame Preparatory High School',
+            query: '9701 E Bell Rd, Scottsdale, AZ 85260',
+            note: 'Catholic (9–12)',
+          },
+          {
+            name: 'Chaparral High School',
+            query: '6935 E Gold Dust Ave, Scottsdale, AZ 85253',
+            note: 'Top public',
+          },
+          {
+            name: 'Cherokee Elementary School',
+            query: '8801 N 56th St, Paradise Valley, AZ 85253',
+            note: 'Nearby public',
+          },
         ],
       },
     ],
