@@ -136,7 +136,7 @@ export default function ContactSection() {
               
               <div className="space-y-6">
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+14803700941"
                   className="flex items-center gap-4 text-white/85 hover:text-white transition-colors group"
                 >
                   <div className="p-3 bg-white/5 rounded-2xl border border-white/10 group-hover:bg-luxury-gold group-hover:text-black transition-colors">
@@ -144,12 +144,12 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-white/55">Phone</p>
-                    <p className="text-lg font-semibold text-white">(123) 456-7890</p>
+                    <p className="text-lg font-semibold text-white">480-370-0941</p>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:info@buenavistaproperty.com"
+                  href="mailto:Irina.Ahdoot@gmail.com"
                   className="flex items-center gap-4 text-white/85 hover:text-white transition-colors group"
                 >
                   <div className="p-3 bg-white/5 rounded-2xl border border-white/10 group-hover:bg-luxury-gold group-hover:text-black transition-colors">
@@ -157,7 +157,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="text-sm text-white/55">Email</p>
-                    <p className="text-lg font-semibold text-white">info@buenavistaproperty.com</p>
+                    <p className="text-lg font-semibold text-white">Irina.Ahdoot@gmail.com</p>
                   </div>
                 </a>
 

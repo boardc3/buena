@@ -18,7 +18,7 @@ export default function StickyTourCTA() {
               Arrange tour
             </a>
             <a
-              href="tel:+1234567890"
+              href="tel:+14803700941"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-4 py-2 text-sm font-semibold hover:bg-white/10 transition"
             >
               <Phone className="w-4 h-4" />

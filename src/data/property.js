@@ -65,7 +65,7 @@ export const PROPERTY = {
     categories: [
       {
         id: 'resorts',
-        label: 'Resorts & Spas (Top 5)',
+        label: 'Resorts & Spas',
         items: [
           {
             name: 'Sanctuary Camelback Mountain Resort & Spa',
@@ -96,7 +96,7 @@ export const PROPERTY = {
       },
       {
         id: 'golf',
-        label: 'Golf (Top 5)',
+        label: 'Golf',
         items: [
           {
             name: 'Camelback Golf Club',
@@ -153,7 +153,7 @@ export const PROPERTY = {
       },
       {
         id: 'dining',
-        label: 'Luxury Dining (Top 5)',
+        label: 'Luxury Dining',
         items: [
           {
             name: 'Ocean 44',
@@ -192,7 +192,7 @@ export const PROPERTY = {
       },
       {
         id: 'hiking',
-        label: 'Hiking (Top 5)',
+        label: 'Hiking',
         items: [
           {
             name: 'Camelback Mountain Echo Canyon Trail',
@@ -223,7 +223,7 @@ export const PROPERTY = {
       },
       {
         id: 'culture',
-        label: 'Culture (Top 5)',
+        label: 'Culture',
         items: [
           {
             name: 'Taliesin West',
@@ -254,7 +254,7 @@ export const PROPERTY = {
       },
       {
         id: 'schools',
-        label: 'Schools (Buyer-relevant)',
+        label: 'Schools',
         items: [
           {
             name: 'Phoenix Country Day School',
