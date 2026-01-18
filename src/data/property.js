@@ -9,7 +9,7 @@ export const PROPERTY = {
     { label: 'Bedrooms', value: '6' },
     { label: 'Bathrooms', value: '8' },
     { label: 'Lot', value: '1.05 acres' },
-    { label: 'Build', value: '2024' },
+    { label: 'Build', value: '2023' },
   ],
   heroTaglines: ['Wellness-forward design. Event-ready entertaining. Mummy Mountain views.'],
   designTeam: ['Eagle Luxury', 'Drewett Works', 'The Draftery', 'Holly Wright Design'],

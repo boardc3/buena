@@ -43,9 +43,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Property Information</h4>
             <ul className="space-y-2 text-white/60 text-sm">
-              <li>MLS #: 6910360</li>
+              <li>MLS #: 6970548</li>
               <li>8,492 sq ft | 6 Bed | 8 Bath</li>
-              <li>1.05 Acres | Built 2024</li>
+              <li>1.05 Acres | Built 2023</li>
               <li>Paradise Valley, AZ 85253</li>
             </ul>
           </div>

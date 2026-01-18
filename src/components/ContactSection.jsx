@@ -194,7 +194,7 @@ export default function ContactSection() {
             <div className="rounded-3xl border hairline surface p-8">
               <h3 className="text-2xl font-display font-semibold mb-4">Quick facts</h3>
               <div className="grid grid-cols-2 gap-3 text-sm text-white/70">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">MLS: 6910360</div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">MLS: 6970548</div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Price: $12,495,000</div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Beds: 6</div>
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">Baths: 8</div>

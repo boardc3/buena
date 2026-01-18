@@ -30,7 +30,7 @@ export default function SpecsSection() {
     {
       icon: <Car className="w-6 h-6" />,
       label: 'Year Built',
-      value: '2024',
+      value: '2023',
       subtext: 'New-build contemporary',
     },
   ]
