@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CalendarDays, ChevronDown, Play } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { PROPERTY } from '../data/property'
-import heroVideo from '../data/INTERNAL-AZ-0.1.mp4'
+import heroVideo from '../assets/IA-1.0.mp4'
 import heroPoster from '../assets/stills/hero_01.jpg'
 
 export default function HeroVideo() {
