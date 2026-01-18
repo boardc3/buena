@@ -24,22 +24,22 @@ export default function PhotoGallery() {
 
   // Stills extracted from the film (swap for photography later if desired)
   const galleryImages = [
-    { id: 1, src: t1, alt: 'Estate scene 1', title: 'Scene 01' },
-    { id: 2, src: t2, alt: 'Estate scene 2', title: 'Scene 02' },
-    { id: 3, src: t3, alt: 'Estate scene 3', title: 'Scene 03' },
-    { id: 4, src: t4, alt: 'Estate scene 4', title: 'Scene 04' },
-    { id: 5, src: t5, alt: 'Estate scene 5', title: 'Scene 05' },
-    { id: 6, src: t6, alt: 'Estate scene 6', title: 'Scene 06' },
-    { id: 7, src: t7, alt: 'Estate scene 7', title: 'Scene 07' },
-    { id: 8, src: t8, alt: 'Estate scene 8', title: 'Scene 08' },
-    { id: 9, src: t9, alt: 'Estate scene 9', title: 'Scene 09' },
-    { id: 10, src: t10, alt: 'Estate scene 10', title: 'Scene 10' },
-    { id: 11, src: t11, alt: 'Estate scene 11', title: 'Scene 11' },
-    { id: 12, src: t12, alt: 'Estate scene 12', title: 'Scene 12' },
-    { id: 13, src: t13, alt: 'Estate scene 13', title: 'Scene 13' },
-    { id: 14, src: t14, alt: 'Estate scene 14', title: 'Scene 14' },
-    { id: 15, src: t15, alt: 'Estate scene 15', title: 'Scene 15' },
-    { id: 16, src: t16, alt: 'Estate scene 16', title: 'Scene 16' },
+    { id: 1, src: t1, alt: 'Estate scene 1' },
+    { id: 2, src: t2, alt: 'Estate scene 2' },
+    { id: 3, src: t3, alt: 'Estate scene 3' },
+    { id: 4, src: t4, alt: 'Estate scene 4' },
+    { id: 5, src: t5, alt: 'Estate scene 5' },
+    { id: 6, src: t6, alt: 'Estate scene 6' },
+    { id: 7, src: t7, alt: 'Estate scene 7' },
+    { id: 8, src: t8, alt: 'Estate scene 8' },
+    { id: 9, src: t9, alt: 'Estate scene 9' },
+    { id: 10, src: t10, alt: 'Estate scene 10' },
+    { id: 11, src: t11, alt: 'Estate scene 11' },
+    { id: 12, src: t12, alt: 'Estate scene 12' },
+    { id: 13, src: t13, alt: 'Estate scene 13' },
+    { id: 14, src: t14, alt: 'Estate scene 14' },
+    { id: 15, src: t15, alt: 'Estate scene 15' },
+    { id: 16, src: t16, alt: 'Estate scene 16' },
   ]
 
   const openLightbox = (index) => {
@@ -103,9 +103,6 @@ export default function PhotoGallery() {
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-sm font-medium">
                   View Full Size
                 </div>
-              </div>
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <div className="text-sm text-white/90 font-semibold">{image.title}</div>
               </div>
             </motion.div>
           ))}
