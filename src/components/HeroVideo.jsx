@@ -42,6 +42,7 @@ export default function HeroVideo() {
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.button
               onClick={handlePlay}
+              aria-label="Play hero video"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: 'spring' }}
@@ -108,10 +109,16 @@ export default function HeroVideo() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, repeat: Infinity, repeatType: 'reverse', duration: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 cursor-pointer"
-        onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
       >
-        <ChevronDown className="text-white w-6 h-6" />
+        <button
+          type="button"
+          aria-label="Scroll to gallery"
+          className="cursor-pointer"
+          onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <ChevronDown className="text-white w-6 h-6" />
+        </button>
       </motion.div>
     </section>
   )

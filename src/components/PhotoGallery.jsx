@@ -24,22 +24,22 @@ export default function PhotoGallery() {
 
   // Stills extracted from the film (swap for photography later if desired)
   const galleryImages = [
-    { id: 1, src: t1, alt: 'Estate scene 1' },
-    { id: 2, src: t2, alt: 'Estate scene 2' },
-    { id: 3, src: t3, alt: 'Estate scene 3' },
-    { id: 4, src: t4, alt: 'Estate scene 4' },
-    { id: 5, src: t5, alt: 'Estate scene 5' },
-    { id: 6, src: t6, alt: 'Estate scene 6' },
-    { id: 7, src: t7, alt: 'Estate scene 7' },
-    { id: 8, src: t8, alt: 'Estate scene 8' },
-    { id: 9, src: t9, alt: 'Estate scene 9' },
-    { id: 10, src: t10, alt: 'Estate scene 10' },
-    { id: 11, src: t11, alt: 'Estate scene 11' },
-    { id: 12, src: t12, alt: 'Estate scene 12' },
-    { id: 13, src: t13, alt: 'Estate scene 13' },
-    { id: 14, src: t14, alt: 'Estate scene 14' },
-    { id: 15, src: t15, alt: 'Estate scene 15' },
-    { id: 16, src: t16, alt: 'Estate scene 16' },
+    { id: 1, src: t1, alt: '5441 E Via Buena Vista – visual tour frame 1' },
+    { id: 2, src: t2, alt: '5441 E Via Buena Vista – visual tour frame 2' },
+    { id: 3, src: t3, alt: '5441 E Via Buena Vista – visual tour frame 3' },
+    { id: 4, src: t4, alt: '5441 E Via Buena Vista – visual tour frame 4' },
+    { id: 5, src: t5, alt: '5441 E Via Buena Vista – visual tour frame 5' },
+    { id: 6, src: t6, alt: '5441 E Via Buena Vista – visual tour frame 6' },
+    { id: 7, src: t7, alt: '5441 E Via Buena Vista – visual tour frame 7' },
+    { id: 8, src: t8, alt: '5441 E Via Buena Vista – visual tour frame 8' },
+    { id: 9, src: t9, alt: '5441 E Via Buena Vista – visual tour frame 9' },
+    { id: 10, src: t10, alt: '5441 E Via Buena Vista – visual tour frame 10' },
+    { id: 11, src: t11, alt: '5441 E Via Buena Vista – visual tour frame 11' },
+    { id: 12, src: t12, alt: '5441 E Via Buena Vista – visual tour frame 12' },
+    { id: 13, src: t13, alt: '5441 E Via Buena Vista – visual tour frame 13' },
+    { id: 14, src: t14, alt: '5441 E Via Buena Vista – visual tour frame 14' },
+    { id: 15, src: t15, alt: '5441 E Via Buena Vista – visual tour frame 15' },
+    { id: 16, src: t16, alt: '5441 E Via Buena Vista – visual tour frame 16' },
   ]
 
   const openLightbox = (index) => {

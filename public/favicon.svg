@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="5441 E Via Buena Vista">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#9A7B1F"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#07080B"/>
+  <path d="M28 92V36h14.5l21.5 31.4L85.5 36H100v56H85.5V61.8L64 92 42.5 61.8V92H28z" fill="url(#g)"/>
+</svg>
+

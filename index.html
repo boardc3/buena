@@ -2,9 +2,83 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="5441 E Via Buena Vista - A stunning new-build luxury estate in Paradise Valley with wellness-forward design, Mummy Mountain views, and resort-style amenities." />
+    <meta name="description" content="5441 E Via Buena Vista — Paradise Valley luxury estate. Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#07080B" />
+    <link id="canonical-link" rel="canonical" href="/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="5441 E Via Buena Vista" />
+    <meta property="og:title" content="5441 E Via Buena Vista | Paradise Valley Luxury Estate" />
+    <meta property="og:description" content="Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
+    <meta id="meta-og-url" property="og:url" content="/" />
+    <meta id="meta-og-image" property="og:image" content="/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="5441 E Via Buena Vista | Paradise Valley Luxury Estate" />
+    <meta name="twitter:description" content="Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
+    <meta id="meta-twitter-image" name="twitter:image" content="/og.jpg" />
+
+    <!-- Canonical/OG + structured data are set to absolute URLs at runtime -->
+    <script>
+      (function () {
+        var site = window.location.origin;
+        var canonical = document.getElementById('canonical-link');
+        if (canonical) canonical.href = site + '/';
+        var ogUrl = document.getElementById('meta-og-url');
+        if (ogUrl) ogUrl.setAttribute('content', site + '/');
+        var ogImg = document.getElementById('meta-og-image');
+        if (ogImg) ogImg.setAttribute('content', site + '/og.jpg');
+        var twImg = document.getElementById('meta-twitter-image');
+        if (twImg) twImg.setAttribute('content', site + '/og.jpg');
+
+        // JSON-LD (RealEstateListing)
+        var ld = {
+          "@context": "https://schema.org",
+          "@type": "RealEstateListing",
+          "name": "5441 E Via Buena Vista",
+          "description":
+            "Paradise Valley luxury estate with wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living.",
+          "url": site + "/",
+          "image": [site + "/og.jpg"],
+          "offers": {
+            "@type": "Offer",
+            "price": "12495000",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "identifier": { "@type": "PropertyValue", "name": "MLS", "value": "6970548" },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5441 E Via Buena Vista",
+            "addressLocality": "Paradise Valley",
+            "addressRegion": "AZ",
+            "postalCode": "85253",
+            "addressCountry": "US"
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "Irina.Ahdoot@gmail.com",
+              "telephone": "+1-480-370-0941"
+            }
+          ]
+        };
+        var s = document.createElement("script");
+        s.type = "application/ld+json";
+        s.text = JSON.stringify(ld);
+        document.head.appendChild(s);
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
