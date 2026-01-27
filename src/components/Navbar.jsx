@@ -25,6 +25,8 @@ export default function Navbar({ scrolled }) {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-black/50 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
       }`}
@@ -67,6 +69,9 @@ export default function Navbar({ scrolled }) {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-white"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -77,10 +82,12 @@ export default function Navbar({ scrolled }) {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-black/80 backdrop-blur-xl border-t border-white/10"
+            role="menu"
           >
             <div className="px-4 py-4 space-y-4">
               {navItems.map((item) => (

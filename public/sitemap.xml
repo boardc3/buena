@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
   <url>
     <loc>http://localhost:5173/</loc>
-    <lastmod>2026-01-20T01:00:51.740Z</lastmod>
+    <lastmod>2026-01-27T19:07:57.792Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>http://localhost:5173/og.jpg</image:loc>
+      <image:title>5441 E Via Buena Vista Paradise Valley Luxury Estate</image:title>
+      <image:caption>$12,495,000 Paradise Valley luxury estate with wellness guest house and Mummy Mountain views</image:caption>
+      <image:geo_location>Paradise Valley, Arizona, USA</image:geo_location>
+    </image:image>
   </url>
 </urlset>

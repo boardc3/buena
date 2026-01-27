@@ -1,9 +1,28 @@
 {
-  "name": "5441 E Via Buena Vista",
-  "short_name": "Via Buena Vista",
+  "name": "5441 E Via Buena Vista | Paradise Valley Luxury Estate",
+  "short_name": "5441 Via Buena Vista",
+  "description": "$12,495,000 Paradise Valley luxury estate. 8,492 sq ft, 6 bed, 8 bath. Wellness guest house, Mummy Mountain views.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#07080B",
-  "theme_color": "#07080B"
+  "theme_color": "#07080B",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["real estate", "lifestyle"],
+  "lang": "en-US"
 }
 

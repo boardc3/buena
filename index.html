@@ -6,26 +6,43 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="5441 E Via Buena Vista — Paradise Valley luxury estate. Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate" />
+    <meta name="description" content="5441 E Via Buena Vista — $12,495,000 Paradise Valley luxury estate. 8,492 sq ft, 6 bed, 8 bath on 1.05 acres. Wellness guest house, Mummy Mountain views, resort-style living. MLS 6970548." />
+    <meta name="keywords" content="Paradise Valley luxury home, Paradise Valley real estate, Arizona luxury estate, Mummy Mountain views, wellness home, 5441 E Via Buena Vista, MLS 6970548, luxury home for sale, Paradise Valley AZ, Scottsdale luxury real estate" />
+    <meta name="author" content="Irina Ahdoot" />
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+    <meta name="googlebot" content="index,follow" />
     <meta name="theme-color" content="#07080B" />
+    <meta name="format-detection" content="telephone=no" />
     <link id="canonical-link" rel="canonical" href="/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="5441 E Via Buena Vista" />
-    <meta property="og:title" content="5441 E Via Buena Vista | Paradise Valley Luxury Estate" />
-    <meta property="og:description" content="Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
+    <meta property="og:title" content="5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate" />
+    <meta property="og:description" content="$12,495,000 Paradise Valley luxury estate. 8,492 sq ft, 6 bed, 8 bath. Wellness guest house, Mummy Mountain views, resort-style indoor–outdoor living. MLS 6970548." />
     <meta id="meta-og-url" property="og:url" content="/" />
     <meta id="meta-og-image" property="og:image" content="/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="5441 E Via Buena Vista luxury estate exterior with pool and Mummy Mountain views in Paradise Valley, Arizona" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="5441 E Via Buena Vista | Paradise Valley Luxury Estate" />
-    <meta name="twitter:description" content="Wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. MLS 6970548." />
+    <meta name="twitter:title" content="5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate" />
+    <meta name="twitter:description" content="$12,495,000 Paradise Valley luxury estate. 8,492 sq ft, 6 bed, 8 bath. Wellness guest house, Mummy Mountain views. MLS 6970548." />
     <meta id="meta-twitter-image" name="twitter:image" content="/og.jpg" />
+    <meta name="twitter:image:alt" content="5441 E Via Buena Vista luxury estate exterior with pool and Mummy Mountain views in Paradise Valley, Arizona" />
+
+    <!-- Additional SEO -->
+    <meta name="geo.region" content="US-AZ" />
+    <meta name="geo.placename" content="Paradise Valley" />
+    <meta name="geo.position" content="33.5387;-111.9426" />
+    <meta name="ICBM" content="33.5387, -111.9426" />
 
     <!-- Canonical/OG + structured data are set to absolute URLs at runtime -->
     <script>
@@ -40,39 +57,118 @@
         var twImg = document.getElementById('meta-twitter-image');
         if (twImg) twImg.setAttribute('content', site + '/og.jpg');
 
-        // JSON-LD (RealEstateListing)
-        var ld = {
-          "@context": "https://schema.org",
-          "@type": "RealEstateListing",
-          "name": "5441 E Via Buena Vista",
-          "description":
-            "Paradise Valley luxury estate with wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living.",
-          "url": site + "/",
-          "image": [site + "/og.jpg"],
-          "offers": {
-            "@type": "Offer",
-            "price": "12495000",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+        // JSON-LD (RealEstateListing + SingleFamilyResidence)
+        var ld = [
+          {
+            "@context": "https://schema.org",
+            "@type": "RealEstateListing",
+            "name": "5441 E Via Buena Vista",
+            "description": "Paradise Valley luxury estate with wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. 8,492 sq ft main residence with 6 bedrooms, 8 bathrooms on 1.05 acres. Separate wellness guest house with infrared sauna, steam room, cold plunge, and gym.",
+            "url": site + "/",
+            "image": [site + "/og.jpg"],
+            "datePosted": "2024-01-01",
+            "offers": {
+              "@type": "Offer",
+              "price": "12495000",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "identifier": { "@type": "PropertyValue", "name": "MLS", "value": "6970548" },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "5441 E Via Buena Vista",
+              "addressLocality": "Paradise Valley",
+              "addressRegion": "AZ",
+              "postalCode": "85253",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 33.5387,
+              "longitude": -111.9426
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "email": "Irina.Ahdoot@gmail.com",
+                "telephone": "+1-480-370-0941",
+                "availableLanguage": ["English"]
+              }
+            ]
           },
-          "identifier": { "@type": "PropertyValue", "name": "MLS", "value": "6970548" },
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "5441 E Via Buena Vista",
-            "addressLocality": "Paradise Valley",
-            "addressRegion": "AZ",
-            "postalCode": "85253",
-            "addressCountry": "US"
+          {
+            "@context": "https://schema.org",
+            "@type": "SingleFamilyResidence",
+            "name": "5441 E Via Buena Vista",
+            "description": "Luxury estate in Paradise Valley with wellness guest house, resort-style amenities, and Mummy Mountain views.",
+            "url": site + "/",
+            "image": site + "/og.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "5441 E Via Buena Vista",
+              "addressLocality": "Paradise Valley",
+              "addressRegion": "AZ",
+              "postalCode": "85253",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 33.5387,
+              "longitude": -111.9426
+            },
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 8492,
+              "unitCode": "FTK"
+            },
+            "numberOfRooms": 14,
+            "numberOfBedrooms": 6,
+            "numberOfBathroomsTotal": 8,
+            "yearBuilt": 2023,
+            "lotSize": {
+              "@type": "QuantitativeValue",
+              "value": 1.05,
+              "unitText": "acres"
+            },
+            "amenityFeature": [
+              { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Spa/Hot Tub", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Home Theater", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Guest House", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Outdoor Kitchen", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Home Gym", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Sauna", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Steam Room", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Smart Home", "value": true }
+            ]
           },
-          "contactPoint": [
-            {
-              "@type": "ContactPoint",
-              "contactType": "sales",
-              "email": "Irina.Ahdoot@gmail.com",
-              "telephone": "+1-480-370-0941"
-            }
-          ]
-        };
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Arizona Luxury Real Estate",
+                "item": site + "/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Paradise Valley",
+                "item": site + "/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "5441 E Via Buena Vista",
+                "item": site + "/"
+              }
+            ]
+          }
+        ];
         var s = document.createElement("script");
         s.type = "application/ld+json";
         s.text = JSON.stringify(ld);
@@ -82,7 +178,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>5441 E Via Buena Vista | Paradise Valley Luxury Estate</title>
+    <title>5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate | MLS 6970548</title>
   </head>
   <body>
     <div id="root"></div>

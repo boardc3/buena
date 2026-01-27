@@ -14,7 +14,10 @@ export default function HeroVideo() {
   }
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section 
+      className="relative h-screen w-full overflow-hidden"
+      aria-label="Property introduction with video tour"
+    >
       {/* Video Container - Replace with your video element */}
       <div className="absolute inset-0 bg-black">
         <video
@@ -27,6 +30,8 @@ export default function HeroVideo() {
           playsInline
           preload="auto"
           onPlay={() => setIsPlaying(true)}
+          aria-label="Cinematic video tour of 5441 E Via Buena Vista luxury estate"
+          title="5441 E Via Buena Vista property video tour"
         />
         {/* Cinematic overlays */}
         <div

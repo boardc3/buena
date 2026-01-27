@@ -22,24 +22,24 @@ export default function PhotoGallery() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  // Stills extracted from the film (swap for photography later if desired)
+  // Stills extracted from the film - descriptive alt text for SEO
   const galleryImages = [
-    { id: 1, src: t1, alt: '5441 E Via Buena Vista – visual tour frame 1' },
-    { id: 2, src: t2, alt: '5441 E Via Buena Vista – visual tour frame 2' },
-    { id: 3, src: t3, alt: '5441 E Via Buena Vista – visual tour frame 3' },
-    { id: 4, src: t4, alt: '5441 E Via Buena Vista – visual tour frame 4' },
-    { id: 5, src: t5, alt: '5441 E Via Buena Vista – visual tour frame 5' },
-    { id: 6, src: t6, alt: '5441 E Via Buena Vista – visual tour frame 6' },
-    { id: 7, src: t7, alt: '5441 E Via Buena Vista – visual tour frame 7' },
-    { id: 8, src: t8, alt: '5441 E Via Buena Vista – visual tour frame 8' },
-    { id: 9, src: t9, alt: '5441 E Via Buena Vista – visual tour frame 9' },
-    { id: 10, src: t10, alt: '5441 E Via Buena Vista – visual tour frame 10' },
-    { id: 11, src: t11, alt: '5441 E Via Buena Vista – visual tour frame 11' },
-    { id: 12, src: t12, alt: '5441 E Via Buena Vista – visual tour frame 12' },
-    { id: 13, src: t13, alt: '5441 E Via Buena Vista – visual tour frame 13' },
-    { id: 14, src: t14, alt: '5441 E Via Buena Vista – visual tour frame 14' },
-    { id: 15, src: t15, alt: '5441 E Via Buena Vista – visual tour frame 15' },
-    { id: 16, src: t16, alt: '5441 E Via Buena Vista – visual tour frame 16' },
+    { id: 1, src: t1, alt: '5441 E Via Buena Vista Paradise Valley estate grand entrance and courtyard' },
+    { id: 2, src: t2, alt: 'Modern luxury living room with floor-to-ceiling windows and mountain views' },
+    { id: 3, src: t3, alt: 'Gourmet chef kitchen with Italian cabinetry and premium appliances' },
+    { id: 4, src: t4, alt: 'Primary suite with panoramic Mummy Mountain views in Paradise Valley' },
+    { id: 5, src: t5, alt: 'Resort-style pool and spa with covered patio and outdoor living' },
+    { id: 6, src: t6, alt: 'Private home theater with premium seating and entertainment system' },
+    { id: 7, src: t7, alt: 'Wellness guest house with infrared sauna and spa amenities' },
+    { id: 8, src: t8, alt: 'Outdoor kitchen and entertaining pavilion at sunset' },
+    { id: 9, src: t9, alt: 'Spa bathroom with soaking tub and natural stone finishes' },
+    { id: 10, src: t10, alt: 'Designer closet with Molteni&C Dada custom organization' },
+    { id: 11, src: t11, alt: 'Home gym in wellness pavilion with modern equipment' },
+    { id: 12, src: t12, alt: 'Climate-controlled garage with premium finishes' },
+    { id: 13, src: t13, alt: 'Landscaped grounds with desert vegetation and mountain backdrop' },
+    { id: 14, src: t14, alt: 'Indoor-outdoor great room with disappearing glass walls' },
+    { id: 15, src: t15, alt: 'Secondary bedroom suite with ensuite bathroom' },
+    { id: 16, src: t16, alt: '5441 E Via Buena Vista luxury estate aerial twilight view' },
   ]
 
   const openLightbox = (index) => {
@@ -64,7 +64,7 @@ export default function PhotoGallery() {
   }
 
   return (
-    <section id="gallery" className="py-24">
+    <section id="gallery" className="py-24" aria-label="Property photo gallery">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -120,6 +120,7 @@ export default function PhotoGallery() {
             >
               <button
                 onClick={closeLightbox}
+                aria-label="Close gallery lightbox"
                 className="absolute top-4 right-4 text-white hover:text-luxury-gold transition-colors z-10 p-2 hover:bg-white/10 rounded-full"
               >
                 <X size={32} />
@@ -130,6 +131,7 @@ export default function PhotoGallery() {
                   e.stopPropagation()
                   prevImage()
                 }}
+                aria-label="View previous image"
                 className="absolute left-4 text-white hover:text-luxury-gold transition-colors z-10 p-2 hover:bg-white/10 rounded-full"
               >
                 <ChevronLeft size={40} />
@@ -140,6 +142,7 @@ export default function PhotoGallery() {
                   e.stopPropagation()
                   nextImage()
                 }}
+                aria-label="View next image"
                 className="absolute right-4 text-white hover:text-luxury-gold transition-colors z-10 p-2 hover:bg-white/10 rounded-full"
               >
                 <ChevronRight size={40} />

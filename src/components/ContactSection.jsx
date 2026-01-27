@@ -35,7 +35,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-24" aria-label="Contact and tour request">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -61,7 +61,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border hairline surface p-8">
+            <form onSubmit={handleSubmit} className="space-y-6 rounded-3xl border hairline surface p-8" aria-label="Tour request form">
               {submitState === 'success' && (
                 <div className="rounded-2xl border border-luxury-gold/25 bg-black/30 px-5 py-4 text-white/85">
                   <div className="font-semibold text-white">Request received.</div>

@@ -3,7 +3,7 @@ import { PROPERTY } from '../data/property'
 
 export default function StoryChapters() {
   return (
-    <section id="story" className="py-24">
+    <section id="story" className="py-24" aria-label="Property story and features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +16,7 @@ export default function StoryChapters() {
             <div className="text-xs tracking-[0.28em] uppercase text-luxury-gold mb-4">
               The buyer story
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold leading-[1.03] tracking-[-0.02em]">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold leading-[1.03] tracking-[-0.02em]" itemProp="headline">
               {PROPERTY.copy.storyTitle}
             </h2>
           </div>
@@ -33,10 +33,10 @@ export default function StoryChapters() {
 
         <div className="mt-14 grid lg:grid-cols-12 gap-6">
           <div className="lg:col-span-7 rounded-3xl border hairline surface p-10">
-            <div className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Wellness</div>
-            <div className="text-2xl md:text-3xl font-display font-semibold">
+            <h3 className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Wellness</h3>
+            <h4 className="text-2xl md:text-3xl font-display font-semibold">
               A separate wellness guest house—built like a private spa.
-            </div>
+            </h4>
             <p className="mt-4 text-white/70 leading-relaxed max-w-2xl">
               Infrared sauna, steam room, cold plunge, and gym—so recovery and routine don’t interfere with
               hosting and daily flow.
@@ -51,10 +51,10 @@ export default function StoryChapters() {
           </div>
 
           <div className="lg:col-span-5 rounded-3xl border hairline surface p-10">
-            <div className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Entertaining</div>
-            <div className="text-2xl md:text-3xl font-display font-semibold">
+            <h3 className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Entertaining</h3>
+            <h4 className="text-2xl md:text-3xl font-display font-semibold">
               A home that hosts like a venue.
-            </div>
+            </h4>
             <p className="mt-4 text-white/70 leading-relaxed">
               Theater + lounge, butler’s pantry, outdoor kitchen, and patios designed for large-scale evenings that
               feel effortless.
@@ -64,10 +64,10 @@ export default function StoryChapters() {
 
         <div className="mt-6 grid lg:grid-cols-12 gap-6">
           <div className="lg:col-span-5 rounded-3xl border hairline surface p-10">
-            <div className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Views</div>
-            <div className="text-2xl md:text-3xl font-display font-semibold">
+            <h3 className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Views</h3>
+            <h4 className="text-2xl md:text-3xl font-display font-semibold">
               Mummy Mountain in frame.
-            </div>
+            </h4>
             <p className="mt-4 text-white/70 leading-relaxed">
               In Paradise Valley, sightlines are value. Walls of glass and indoor–outdoor architecture turn the
               view into a daily feature—not a selling line.
@@ -75,10 +75,10 @@ export default function StoryChapters() {
           </div>
 
           <div className="lg:col-span-7 rounded-3xl border hairline surface p-10">
-            <div className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Detail</div>
-            <div className="text-2xl md:text-3xl font-display font-semibold">
+            <h3 className="text-xs tracking-[0.28em] uppercase text-white/55 mb-3">Detail</h3>
+            <h4 className="text-2xl md:text-3xl font-display font-semibold">
               {PROPERTY.copy.detailsTitle}
-            </div>
+            </h4>
             <p className="mt-4 text-white/70 leading-relaxed">
               {PROPERTY.copy.detailsBody}
             </p>

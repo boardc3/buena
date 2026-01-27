@@ -350,7 +350,7 @@ VITE_MAPBOX_TOKEN=YOUR_TOKEN_HERE
   }
 
   return (
-    <section id="map" className="py-24">
+    <section id="map" className="py-24" aria-label="Neighborhood and nearby attractions map">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 14 }}

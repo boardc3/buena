@@ -1,4 +1,21 @@
+# Robots.txt for 5441 E Via Buena Vista
+# https://www.robotstxt.org/
+
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: http://localhost:5173/sitemap.xml
+
+# Crawl-delay for politeness (optional)
+Crawl-delay: 1
+
+# Specific bot directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
