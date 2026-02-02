@@ -4,13 +4,15 @@ import { PROPERTY } from '../data/property'
 export default function StoryChapters() {
   return (
     <section id="story" className="py-24" aria-label="Property story and features" itemScope itemType="https://schema.org/SingleFamilyResidence">
-      {/* Hidden SEO content for crawlers */}
+      {/* Hidden SEO content for crawlers - Address optimized */}
       <div className="sr-only">
-        <h1 itemProp="name">5441 E Via Buena Vista - Paradise Valley Luxury Estate</h1>
+        <h1 itemProp="name">5441 E Via Buena Vista, Paradise Valley, AZ 85253 - Luxury Home for Sale</h1>
+        <h2>5441 East Via Buena Vista, Paradise Valley, Arizona 85253</h2>
         <p itemProp="description">
-          $12,495,000 luxury home for sale in Paradise Valley, Arizona. This 8,492 square foot estate 
-          features 6 bedrooms, 8 bathrooms, and sits on 1.05 acres with Mummy Mountain views. 
-          Includes separate wellness guest house with infrared sauna, steam room, cold plunge, and gym. 
+          5441 E Via Buena Vista is a $12,495,000 luxury home for sale in Paradise Valley, Arizona 85253. 
+          This 8,492 square foot estate at 5441 Via Buena Vista features 6 bedrooms, 8 bathrooms, and 
+          sits on 1.05 acres with Mummy Mountain views. 5441 E Via Buena Vista includes a separate 
+          wellness guest house with infrared sauna, steam room, cold plunge, and gym. 
           Built in 2023 by Eagle Luxury Properties. MLS 6970548.
         </p>
         <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
@@ -19,6 +21,8 @@ export default function StoryChapters() {
           <span itemProp="addressRegion">AZ</span>
           <span itemProp="postalCode">85253</span>
         </div>
+        <p>Address variations: 5441 East Via Buena Vista, 5441 Via Buena Vista Paradise Valley, 
+           5441 E Via Buena Vista Paradise Valley AZ, 5441 Via Buena Vista AZ 85253</p>
         <span itemProp="numberOfBedrooms">6</span> bedrooms,
         <span itemProp="numberOfBathroomsTotal">8</span> bathrooms,
         <span itemProp="floorSize">8492</span> square feet,

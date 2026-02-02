@@ -75,9 +75,12 @@ export default function HeroVideo() {
               <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-white/40" />
               <div className="text-xs md:text-sm text-white/65">{PROPERTY.price}</div>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold mb-6 leading-[0.95] tracking-[-0.02em]">
-              {PROPERTY.copy.heroHeadline}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-semibold mb-4 leading-[0.95] tracking-[-0.02em]">
+              5441 E Via Buena Vista
             </h1>
+            <p className="text-xl md:text-2xl text-white/60 mb-6 font-display">
+              Paradise Valley, Arizona 85253
+            </p>
             <p className="text-lg md:text-2xl mb-8 max-w-3xl text-white/75 leading-relaxed">
               {PROPERTY.copy.heroSubhead}
             </p>
