@@ -86,7 +86,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <video:title>5441 E Via Buena Vista Video Tour - Paradise Valley Luxury Estate</video:title>
       <video:description>Cinematic video tour of 5441 E Via Buena Vista, a $12,495,000 luxury estate in Paradise Valley, Arizona 85253. Features 8,492 sq ft, 6 bedrooms, 8 bathrooms, wellness guest house, and Mummy Mountain views. MLS 6970548.</video:description>
       <video:content_loc>${siteUrl}video-tour.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes">${siteUrl}watch.html</video:player_loc>
       <video:duration>150</video:duration>
       <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
