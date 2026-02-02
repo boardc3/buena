@@ -244,9 +244,19 @@
             "description": "Cinematic video tour of 5441 E Via Buena Vista, a $12,495,000 luxury estate in Paradise Valley, Arizona featuring wellness guest house, resort amenities, and Mummy Mountain views.",
             "thumbnailUrl": site + "/og.jpg",
             "uploadDate": "2024-01-01",
-            "contentUrl": site + "/",
-            "embedUrl": site + "/",
-            "duration": "PT2M30S"
+            "contentUrl": site + "/video-tour.mp4",
+            "embedUrl": site + "/watch.html",
+            "playerType": "HTML5",
+            "duration": "PT2M30S",
+            "interactionStatistic": {
+              "@type": "InteractionCounter",
+              "interactionType": { "@type": "WatchAction" },
+              "userInteractionCount": 0
+            },
+            "potentialAction": {
+              "@type": "WatchAction",
+              "target": site + "/watch.html"
+            }
           },
           // 5. LocalBusiness (for local SEO)
           {
