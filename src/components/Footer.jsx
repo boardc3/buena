@@ -29,12 +29,19 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-luxury-gold transition-colors">
-                  Gallery
+                <a href="/gallery.html" className="hover:text-luxury-gold transition-colors">
+                  Photo Gallery
                 </a>
               </li>
               <li>
-                <a href="#story" className="hover:text-luxury-gold transition-colors">Story</a>
+                <a href="/details.html" className="hover:text-luxury-gold transition-colors">
+                  Property Details
+                </a>
+              </li>
+              <li>
+                <a href="/faq.html" className="hover:text-luxury-gold transition-colors">
+                  FAQ
+                </a>
               </li>
               <li>
                 <a href="#map" className="hover:text-luxury-gold transition-colors">Neighborhood</a>

@@ -21,6 +21,12 @@ export default function Navbar({ scrolled }) {
     { id: 'contact', label: 'Tour' },
   ]
 
+  const pageLinks = [
+    { href: '/watch.html', label: 'Video' },
+    { href: '/details.html', label: 'Details' },
+    { href: '/faq.html', label: 'FAQ' },
+  ]
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -46,7 +52,7 @@ export default function Navbar({ scrolled }) {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -55,6 +61,16 @@ export default function Navbar({ scrolled }) {
               >
                 {item.label}
               </button>
+            ))}
+            <span className="text-white/20">|</span>
+            {pageLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-white/75 hover:text-luxury-gold transition-colors"
+              >
+                {link.label}
+              </a>
             ))}
             <a
               href="#contact"
@@ -99,6 +115,17 @@ export default function Navbar({ scrolled }) {
                   {item.label}
                 </button>
               ))}
+              <div className="border-t border-white/10 pt-4 mt-4">
+                {pageLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="block text-white/85 font-medium hover:text-luxury-gold py-2"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
               <a
                 href="#contact"
                 className="flex items-center space-x-2 text-luxury-gold font-semibold py-2"

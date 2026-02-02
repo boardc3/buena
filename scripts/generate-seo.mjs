@@ -115,10 +115,40 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <video:category>Real Estate</video:category>
     </video:video>
   </url>
+  <url>
+    <loc>${siteUrl}details.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>${siteUrl}og.jpg</image:loc>
+      <image:title>5441 E Via Buena Vista Property Details</image:title>
+      <image:caption>Property specifications for $12,495,000 Paradise Valley luxury estate - 8,492 sq ft, 6 bed, 8 bath</image:caption>
+      <image:geo_location>Paradise Valley, Arizona, USA</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>${siteUrl}gallery.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>${siteUrl}og.jpg</image:loc>
+      <image:title>5441 E Via Buena Vista Photo Gallery</image:title>
+      <image:caption>16 photos of Paradise Valley luxury estate - living spaces, wellness guest house, resort pool, mountain views</image:caption>
+      <image:geo_location>Paradise Valley, Arizona, USA</image:geo_location>
+    </image:image>
+  </url>
+  <url>
+    <loc>${siteUrl}faq.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
 `
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap)
-console.log('[SEO] sitemap.xml generated with video page')
+console.log('[SEO] sitemap.xml generated with 5 pages (home, watch, details, gallery, faq)')
 
 console.log('[SEO] Generation complete!')
 
