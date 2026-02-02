@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import HeroVideo from './components/HeroVideo'
-import StoryChapters from './components/StoryChapters'
-import PhotoGallery from './components/PhotoGallery'
 import MapboxNeighborhood from './components/MapboxNeighborhood'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
@@ -27,8 +25,6 @@ function App() {
       <Navbar scrolled={scrolled} />
       <main id="main-content" role="main">
         <HeroVideo />
-        <StoryChapters />
-        <PhotoGallery />
         <MapboxNeighborhood />
         <ContactSection />
       </main>

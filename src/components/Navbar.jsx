@@ -15,15 +15,14 @@ export default function Navbar({ scrolled }) {
   }
 
   const navItems = [
-    { id: 'story', label: 'Story' },
-    { id: 'gallery', label: 'Gallery' },
     { id: 'map', label: 'Neighborhood' },
-    { id: 'contact', label: 'Tour' },
+    { id: 'contact', label: 'Contact' },
   ]
 
   const pageLinks = [
-    { href: '/watch.html', label: 'Video' },
     { href: '/details.html', label: 'Details' },
+    { href: '/gallery.html', label: 'Gallery' },
+    { href: '/watch.html', label: 'Video' },
     { href: '/faq.html', label: 'FAQ' },
   ]
 

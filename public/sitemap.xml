@@ -6,7 +6,7 @@
 >
   <url>
     <loc>http://localhost:5173/</loc>
-    <lastmod>2026-02-02T21:14:18.511Z</lastmod>
+    <lastmod>2026-02-02T21:22:35.383Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>http://localhost:5173/watch.html</loc>
-    <lastmod>2026-02-02T21:14:18.511Z</lastmod>
+    <lastmod>2026-02-02T21:22:35.383Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <video:video>
@@ -57,7 +57,7 @@
   </url>
   <url>
     <loc>http://localhost:5173/details.html</loc>
-    <lastmod>2026-02-02T21:14:18.511Z</lastmod>
+    <lastmod>2026-02-02T21:22:35.383Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>http://localhost:5173/gallery.html</loc>
-    <lastmod>2026-02-02T21:14:18.511Z</lastmod>
+    <lastmod>2026-02-02T21:22:35.383Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>http://localhost:5173/faq.html</loc>
-    <lastmod>2026-02-02T21:14:18.511Z</lastmod>
+    <lastmod>2026-02-02T21:22:35.383Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
