@@ -82,7 +82,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <video:content_loc>${siteUrl}video-tour.mp4</video:content_loc>
       <video:player_loc allow_embed="yes">${siteUrl}watch.html</video:player_loc>
       <video:duration>150</video:duration>
-      <video:publication_date>2024-01-01T00:00:00+00:00</video:publication_date>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:requires_subscription>no</video:requires_subscription>
       <video:live>no</video:live>
@@ -104,7 +104,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <video:content_loc>${siteUrl}video-tour.mp4</video:content_loc>
       <video:player_loc allow_embed="yes">${siteUrl}watch.html</video:player_loc>
       <video:duration>150</video:duration>
-      <video:publication_date>2024-01-01T00:00:00+00:00</video:publication_date>
+      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:requires_subscription>no</video:requires_subscription>
       <video:live>no</video:live>
