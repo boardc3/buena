@@ -75,22 +75,6 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <image:caption>$12,495,000 Paradise Valley luxury estate with wellness guest house and Mummy Mountain views</image:caption>
       <image:geo_location>Paradise Valley, Arizona, USA</image:geo_location>
     </image:image>
-    <video:video>
-      <video:thumbnail_loc>${siteUrl}og.jpg</video:thumbnail_loc>
-      <video:title>5441 E Via Buena Vista - Paradise Valley Luxury Estate Tour</video:title>
-      <video:description>Explore 5441 E Via Buena Vista, a stunning $12,495,000 luxury estate in Paradise Valley, AZ 85253. This wellness-forward property features 8,492 sq ft, 6 bedrooms, 8 bathrooms, a separate wellness guest house with infrared sauna, steam room, cold plunge and gym, plus panoramic Mummy Mountain views.</video:description>
-      <video:content_loc>${siteUrl}video-tour.mp4</video:content_loc>
-      <video:player_loc allow_embed="yes">${siteUrl}watch.html</video:player_loc>
-      <video:duration>150</video:duration>
-      <video:publication_date>2026-01-01T00:00:00+00:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:requires_subscription>no</video:requires_subscription>
-      <video:live>no</video:live>
-      <video:tag>5441 E Via Buena Vista</video:tag>
-      <video:tag>Paradise Valley luxury homes</video:tag>
-      <video:tag>Arizona real estate</video:tag>
-      <video:category>Real Estate</video:category>
-    </video:video>
   </url>
   <url>
     <loc>${siteUrl}watch.html</loc>
