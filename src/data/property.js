@@ -22,7 +22,7 @@ export const PROPERTY = {
     {
       title: 'Entertaining built into the architecture',
       body:
-        'Theater + lounge, butler’s pantry, and an outdoor kitchen create a true event flow—dinners, screenings, and catered evenings feel effortless.',
+        'Theater + lounge, butler\'s pantry, and an outdoor kitchen create a true event flow—dinners, screenings, and catered evenings feel effortless.',
     },
     {
       title: 'Paradise Valley privacy, done correctly',
@@ -35,7 +35,7 @@ export const PROPERTY = {
         'In PV, sightlines drive value. The pairing of walls of glass and indoor–outdoor modern design turns the view into a feature you live with.',
     },
     {
-      title: '“No excuses” detail signals',
+      title: '"No excuses" detail signals',
       body:
         'Molteni&C Dada closets, climate-controlled garage, and smart systems are the specs buyers look for when they want a modern build that holds up at resale.',
     },
@@ -46,7 +46,7 @@ export const PROPERTY = {
       body: 'Cold plunge → steam → infrared sauna → lift session, all in the separate wellness retreat.',
     },
     { title: 'Golden hour', body: 'Walls of glass, mountain light, and a home that opens seamlessly to the resort yard.' },
-    { title: 'Private hosting', body: 'A catered dinner, then a screening in the theater—your guests never see the “back of house.”' },
+    { title: 'Private hosting', body: 'A catered dinner, then a screening in the theater—your guests never see the "back of house."' },
     { title: 'Night resort', body: 'Spa, misting, and outdoor kitchen energy—your backyard becomes the venue.' },
   ],
   copy: {
@@ -55,13 +55,14 @@ export const PROPERTY = {
       'A design-team new build in Paradise Valley—built for discreet living and effortless hosting.',
     storyTitle: 'Two lifestyles, one address.',
     storyBody:
-      'A separate wellness guest house keeps routine and recovery private. The main home stays event-ready—two primary suites, theater, butler’s pantry, and indoor–outdoor flow.',
+      'A separate wellness guest house keeps routine and recovery private. The main home stays event-ready—two primary suites, theater, butler\'s pantry, and indoor-outdoor flow.',
     detailsTitle: 'Quiet confidence in the details.',
     detailsBody:
-      'Recognizable specification and systems—so the home feels finished, not “almost.”',
+      'Recognizable specification and systems—so the home feels finished, not "almost."',
   },
   map: {
     centerQuery: '5441 E Via Buena Vista, Paradise Valley, AZ 85253',
+    // Property coordinates: 33.5387, -111.9426
     categories: [
       {
         id: 'resorts',
@@ -70,27 +71,32 @@ export const PROPERTY = {
           {
             name: 'Sanctuary Camelback Mountain Resort & Spa',
             query: '5700 E McDonald Dr, Paradise Valley, AZ 85253',
-            note: 'Luxury resort + acclaimed spa',
+            note: 'Asian-inspired spa · Camelback views',
+            // 33.5235, -111.9431
           },
           {
-            name: 'JW Marriott Scottsdale Camelback Inn Resort & Spa',
+            name: 'JW Marriott Scottsdale Camelback Inn',
             query: '5402 E Lincoln Dr, Scottsdale, AZ 85253',
-            note: 'Historic desert resort',
+            note: 'Historic desert resort · spa & golf',
+            // 33.5194, -111.9507
           },
           {
-            name: 'Omni Scottsdale Resort & Spa at Montelucia',
+            name: 'Omni Scottsdale Resort at Montelucia',
             query: '4949 E Lincoln Dr, Scottsdale, AZ 85253',
-            note: 'Joya Spa',
+            note: 'Andalusian style · Joya Spa',
+            // 33.5189, -111.9601
           },
           {
             name: 'The Phoenician',
             query: '6000 E Camelback Rd, Scottsdale, AZ 85251',
-            note: 'Iconic resort + spa',
+            note: 'Iconic luxury · award-winning spa',
+            // 33.5088, -111.9359
           },
           {
-            name: 'The Hermosa Inn',
-            query: '5532 N Palo Cristi Rd, Paradise Valley, AZ 85253',
-            note: 'Boutique resort',
+            name: 'The Global Ambassador',
+            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
+            note: 'New luxury · comprehensive spa',
+            // 33.5094, -111.9838
           },
         ],
       },
@@ -99,29 +105,34 @@ export const PROPERTY = {
         label: 'Golf',
         items: [
           {
+            name: 'TPC Scottsdale',
+            query: '17020 N Hayden Rd, Scottsdale, AZ 85255',
+            note: 'Stadium Course · WM Phoenix Open',
+            // 33.6428, -111.8970
+          },
+          {
+            name: 'Grayhawk Golf Club',
+            query: '8620 E Thompson Peak Pkwy, Scottsdale, AZ 85255',
+            note: 'Talon & Raptor courses',
+            // 33.6780, -111.8973
+          },
+          {
+            name: 'Gainey Ranch Golf Club',
+            query: '7600 E Gainey Club Dr, Scottsdale, AZ 85258',
+            note: 'Classic desert layout',
+            // 33.5711, -111.9103
+          },
+          {
             name: 'Camelback Golf Club',
             query: '7847 N Mockingbird Ln, Scottsdale, AZ 85253',
-            note: 'Padre + Ambiente',
+            note: 'Padre & Ambiente courses',
+            // 33.5444, -111.9252
           },
           {
             name: 'Paradise Valley Country Club',
             query: '7101 N Tatum Blvd, Paradise Valley, AZ 85253',
             note: 'Exclusive private club',
-          },
-          {
-            name: 'The Phoenician Golf Club',
-            query: '6000 E Camelback Rd, Scottsdale, AZ 85251',
-            note: 'Resort golf',
-          },
-          {
-            name: 'Mountain Shadows Golf Club',
-            query: '5445 E Lincoln Dr, Paradise Valley, AZ 85253',
-            note: 'Short course',
-          },
-          {
-            name: 'Arizona Biltmore Golf Club',
-            query: '2818 E Missouri Ave, Phoenix, AZ 85016',
-            note: 'Classic desert golf',
+            // 33.5384, -111.9770
           },
         ],
       },
@@ -132,22 +143,26 @@ export const PROPERTY = {
           {
             name: 'Scottsdale Fashion Square',
             query: '7014 E Camelback Rd, Scottsdale, AZ 85251',
-            note: 'Gucci · LV · Cartier',
+            note: 'Gucci · Louis Vuitton · Cartier',
+            // 33.5034, -111.9259
+          },
+          {
+            name: 'Kierland Commons',
+            query: '15205 N Kierland Blvd, Scottsdale, AZ 85254',
+            note: 'Upscale open-air · luxury lifestyle',
+            // 33.6216, -111.9270
+          },
+          {
+            name: 'Scottsdale Quarter',
+            query: '15279 N Scottsdale Rd, Scottsdale, AZ 85254',
+            note: 'Premium fashion & dining',
+            // 33.6200, -111.9260
           },
           {
             name: 'Old Town Scottsdale',
             query: 'N Scottsdale Rd, Scottsdale, AZ 85251',
-            note: 'Boutiques + galleries',
-          },
-          {
-            name: 'Scottsdale Waterfront',
-            query: '7135 E Camelback Rd, Scottsdale, AZ 85251',
-            note: 'Walkable luxury',
-          },
-          {
-            name: 'Biltmore Fashion Park',
-            query: '2502 E Camelback Rd, Phoenix, AZ 85016',
-            note: 'Luxury retail',
+            note: 'Boutiques · galleries · designers',
+            // 33.4942, -111.9261
           },
         ],
       },
@@ -158,35 +173,32 @@ export const PROPERTY = {
           {
             name: 'Ocean 44',
             query: '4748 N Goldwater Blvd, Scottsdale, AZ 85251',
-            note: 'Steak + seafood',
+            note: 'Award-winning steak & seafood',
+            // 33.4998, -111.9230
           },
           {
-            name: 'Steak 44',
-            query: '5101 N 44th St, Phoenix, AZ 85018',
-            note: 'Arcadia (Phoenix) · power dinner',
-            meta: {
-              rating: 4.7,
-              reviews: 4294,
-              price: '$100+',
-              type: 'Fine dining steakhouse',
-              locatedIn: 'Camelback Village Center',
-              phone: '(602) 271-4400',
-            },
+            name: 'Le Âme',
+            query: '4360 E Camelback Rd, Phoenix, AZ 85018',
+            note: 'French steakhouse · Global Ambassador',
+            // 33.5094, -111.9838
           },
           {
             name: 'Maple & Ash',
             query: '7135 E Camelback Rd Ste 130, Scottsdale, AZ 85251',
-            note: 'Modern steakhouse',
+            note: 'Wood-fired · exceptional wine',
+            // 33.5030, -111.9234
           },
           {
             name: 'Toca Madera Scottsdale',
             query: '4736 N Goldwater Blvd, Scottsdale, AZ 85251',
-            note: 'Modern Mexican',
+            note: 'Modern Mexican · upscale vibe',
+            // 33.4996, -111.9230
           },
           {
             name: 'Catch Scottsdale',
             query: '7014 E Camelback Rd Ste 612, Scottsdale, AZ 85251',
-            note: 'Seafood + sushi',
+            note: 'Trendy seafood & sushi',
+            // 33.5034, -111.9259
           },
         ],
       },
@@ -195,29 +207,34 @@ export const PROPERTY = {
         label: 'Hiking',
         items: [
           {
-            name: 'Camelback Mountain Echo Canyon Trail',
+            name: 'McDowell Sonoran Preserve Gateway',
+            query: '18333 N Thompson Peak Pkwy, Scottsdale, AZ 85255',
+            note: 'Scenic desert loop · moderate',
+            // 33.6583, -111.8630
+          },
+          {
+            name: "Tom's Thumb Trail",
+            query: '23015 N 128th St, Scottsdale, AZ 85255',
+            note: 'Granite formations · panoramic views',
+            // 33.6961, -111.8182
+          },
+          {
+            name: 'Pinnacle Peak Trail',
+            query: '26802 N 102nd Way, Scottsdale, AZ 85262',
+            note: 'Popular moderate · desert views',
+            // 33.7254, -111.8581
+          },
+          {
+            name: 'Camelback Mountain Echo Canyon',
             query: '4925 E McDonald Dr, Phoenix, AZ 85018',
-            note: 'Steep summit',
+            note: 'Steep summit · 360° city views',
+            // 33.5228, -111.9700
           },
           {
-            name: 'Camelback Mountain Cholla Trail',
-            query: '6131 E Cholla Ln, Phoenix, AZ 85018',
-            note: 'Alternate route',
-          },
-          {
-            name: 'Piestewa Peak Summit Trail',
-            query: '2701 E Squaw Peak Dr, Phoenix, AZ 85016',
-            note: 'City + mountain views',
-          },
-          {
-            name: 'Papago Park (Hole-in-the-Rock)',
-            query: '625 N Galvin Pkwy, Phoenix, AZ 85008',
-            note: 'Iconic desert landmark',
-          },
-          {
-            name: 'Desert Botanical Garden',
-            query: '1201 N Galvin Pkwy, Phoenix, AZ 85008',
-            note: '50,000+ desert plants',
+            name: 'Lost Dog Wash Trail',
+            query: '12601 N 124th St, Scottsdale, AZ 85259',
+            note: 'Easier · wildlife spotting',
+            // 33.6056, -111.8180
           },
         ],
       },
@@ -228,27 +245,32 @@ export const PROPERTY = {
           {
             name: 'Taliesin West',
             query: '12621 N Frank Lloyd Wright Blvd, Scottsdale, AZ 85259',
-            note: 'Frank Lloyd Wright',
+            note: 'UNESCO · Frank Lloyd Wright',
+            // 33.6067, -111.8449
           },
           {
-            name: 'Western Spirit: Scottsdale’s Museum of the West',
+            name: 'Western Spirit Museum of the West',
             query: '3830 N Marshall Way, Scottsdale, AZ 85251',
-            note: 'Museum of the West',
+            note: 'Art & history of the American West',
+            // 33.4959, -111.9245
           },
           {
             name: 'Scottsdale Museum of Contemporary Art',
             query: '7374 E 2nd St, Scottsdale, AZ 85251',
-            note: 'Modern + design',
+            note: 'Modern art · design · architecture',
+            // 33.4939, -111.9229
           },
           {
             name: 'Scottsdale Center for the Performing Arts',
             query: '7380 E 2nd St, Scottsdale, AZ 85251',
-            note: 'Live performance',
+            note: 'Theatre · music · dance',
+            // 33.4940, -111.9228
           },
           {
             name: 'Wonderspaces Arizona',
             query: '7014 E Camelback Rd, Scottsdale, AZ 85251',
-            note: 'Immersive art',
+            note: 'Immersive art installations',
+            // 33.5034, -111.9259
           },
         ],
       },
@@ -259,36 +281,35 @@ export const PROPERTY = {
           {
             name: 'Phoenix Country Day School',
             query: '3901 E Stanford Dr, Paradise Valley, AZ 85253',
-            note: 'Private PK–12',
+            note: 'Private PK–12 · elite academics',
+            // 33.5298, -111.9821
           },
           {
-            name: 'Notre Dame Preparatory High School',
+            name: 'Brophy College Preparatory',
+            query: '4701 N Central Ave, Phoenix, AZ 85012',
+            note: 'Jesuit all-boys (6–12)',
+            // 33.5057, -112.0744
+          },
+          {
+            name: 'Notre Dame Preparatory',
             query: '9701 E Bell Rd, Scottsdale, AZ 85260',
-            note: 'Catholic (9–12)',
+            note: 'Co-ed Catholic high school',
+            // 33.6404, -111.8760
           },
           {
             name: 'Chaparral High School',
             query: '6935 E Gold Dust Ave, Scottsdale, AZ 85253',
-            note: 'Top public',
+            note: 'Top public · Paradise Valley',
+            // 33.5432, -111.9302
           },
           {
             name: 'Cherokee Elementary School',
             query: '8801 N 56th St, Paradise Valley, AZ 85253',
-            note: 'Nearby public',
-          },
-          {
-            name: 'Cocopah Middle School',
-            query: '7500 E Jackrabbit Rd, Scottsdale, AZ 85250',
-            note: 'Top public',
-          },
-          {
-            name: 'Jones-Gordon School',
-            query: '4540 N 44th St, Phoenix, AZ 85018',
-            note: 'Private (K–8)',
+            note: 'Nearby public elementary',
+            // 33.5539, -111.9696
           },
         ],
       },
     ],
   },
 }
-
