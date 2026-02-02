@@ -9,22 +9,44 @@ export default function ContactSection() {
     phone: '',
     message: '',
   })
-  const [submitState, setSubmitState] = useState('idle') // 'idle' | 'submitting' | 'success'
+  const [submitState, setSubmitState] = useState('idle') // 'idle' | 'submitting' | 'success' | 'error'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (submitState === 'submitting') return
     setSubmitState('submitting')
 
-    // Keep the event handler fast: schedule the next UI updates outside the input event.
-    // Replace this block with a real async send (fetch) later.
-    window.requestAnimationFrame(() => {
-      window.setTimeout(() => {
+    try {
+      const form = new FormData()
+      form.append('access_key', '25dda872-70d9-4c81-8d4c-58da81d36aa4')
+      form.append('subject', '5441 E Via Buena Vista - Tour Request')
+      form.append('from_name', 'Via Buena Vista Website')
+      form.append('name', formData.name)
+      form.append('email', formData.email)
+      form.append('phone', formData.phone)
+      form.append('message', formData.message || 'No message provided')
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: form,
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
         setSubmitState('success')
         setFormData({ name: '', email: '', phone: '', message: '' })
-        window.setTimeout(() => setSubmitState('idle'), 3000)
-      }, 200)
-    })
+        setTimeout(() => setSubmitState('idle'), 5000)
+      } else {
+        console.error('Form error:', data)
+        setSubmitState('error')
+        setTimeout(() => setSubmitState('idle'), 5000)
+      }
+    } catch (err) {
+      console.error('Submit error:', err)
+      setSubmitState('error')
+      setTimeout(() => setSubmitState('idle'), 5000)
+    }
   }
 
   const handleChange = (e) => {
@@ -67,6 +89,14 @@ export default function ContactSection() {
                   <div className="font-semibold text-white">Request received.</div>
                   <div className="text-sm text-white/65 mt-1">
                     We’ll confirm availability and follow up shortly.
+                  </div>
+                </div>
+              )}
+              {submitState === 'error' && (
+                <div className="rounded-2xl border border-red-500/25 bg-red-900/20 px-5 py-4 text-white/85">
+                  <div className="font-semibold text-white">Something went wrong.</div>
+                  <div className="text-sm text-white/65 mt-1">
+                    Please try again or call us directly at 480-370-0941.
                   </div>
                 </div>
               )}
