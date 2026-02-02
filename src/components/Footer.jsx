@@ -24,6 +24,11 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-white/60">
               <li>
+                <a href="/watch.html" className="hover:text-luxury-gold transition-colors">
+                  Video Tour
+                </a>
+              </li>
+              <li>
                 <a href="#gallery" className="hover:text-luxury-gold transition-colors">
                   Gallery
                 </a>

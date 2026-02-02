@@ -57,11 +57,12 @@ Allow: /
 fs.writeFileSync(path.join(publicDir, 'robots.txt'), robots)
 console.log('[SEO] robots.txt generated')
 
-// sitemap.xml with image sitemap extension
+// sitemap.xml with image and video sitemap extensions
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
 >
   <url>
     <loc>${siteUrl}</loc>
@@ -75,10 +76,25 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
       <image:geo_location>Paradise Valley, Arizona, USA</image:geo_location>
     </image:image>
   </url>
+  <url>
+    <loc>${siteUrl}watch.html</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <video:video>
+      <video:thumbnail_loc>${siteUrl}og.jpg</video:thumbnail_loc>
+      <video:title>5441 E Via Buena Vista Video Tour - Paradise Valley Luxury Estate</video:title>
+      <video:description>Cinematic video tour of 5441 E Via Buena Vista, a $12,495,000 luxury estate in Paradise Valley, Arizona 85253. Features 8,492 sq ft, 6 bedrooms, 8 bathrooms, wellness guest house, and Mummy Mountain views. MLS 6970548.</video:description>
+      <video:content_loc>${siteUrl}watch.html</video:content_loc>
+      <video:duration>150</video:duration>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
 </urlset>
 `
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap)
-console.log('[SEO] sitemap.xml generated')
+console.log('[SEO] sitemap.xml generated with video page')
 
 console.log('[SEO] Generation complete!')
 
