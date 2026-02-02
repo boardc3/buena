@@ -57,23 +57,38 @@
         var twImg = document.getElementById('meta-twitter-image');
         if (twImg) twImg.setAttribute('content', site + '/og.jpg');
 
-        // JSON-LD (RealEstateListing + SingleFamilyResidence)
+        // Comprehensive JSON-LD Schema
         var ld = [
+          // 1. RealEstateListing (primary)
           {
             "@context": "https://schema.org",
             "@type": "RealEstateListing",
-            "name": "5441 E Via Buena Vista",
-            "description": "Paradise Valley luxury estate with wellness-forward design, Mummy Mountain views, and resort-style indoor–outdoor living. 8,492 sq ft main residence with 6 bedrooms, 8 bathrooms on 1.05 acres. Separate wellness guest house with infrared sauna, steam room, cold plunge, and gym.",
+            "@id": site + "/#listing",
+            "name": "5441 E Via Buena Vista - $12,495,000 Paradise Valley Luxury Estate",
+            "description": "Paradise Valley luxury estate with wellness-forward design, Mummy Mountain views, and resort-style indoor-outdoor living. 8,492 sq ft main residence with 6 bedrooms, 8 bathrooms on 1.05 acres. Separate wellness guest house with infrared sauna, steam room, cold plunge, and gym. Built in 2023 by Eagle Luxury Properties with architecture by Drewett Works.",
             "url": site + "/",
-            "image": [site + "/og.jpg"],
+            "mainEntityOfPage": site + "/",
+            "image": {
+              "@type": "ImageObject",
+              "url": site + "/og.jpg",
+              "width": 1200,
+              "height": 630,
+              "caption": "5441 E Via Buena Vista Paradise Valley luxury estate with pool and Mummy Mountain views"
+            },
             "datePosted": "2024-01-01",
+            "dateModified": new Date().toISOString().split('T')[0],
             "offers": {
               "@type": "Offer",
               "price": "12495000",
               "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "priceValidUntil": "2026-12-31",
+              "url": site + "/#contact"
             },
-            "identifier": { "@type": "PropertyValue", "name": "MLS", "value": "6970548" },
+            "identifier": [
+              { "@type": "PropertyValue", "name": "MLS", "value": "6970548" },
+              { "@type": "PropertyValue", "name": "Property Type", "value": "Single Family Residence" }
+            ],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "5441 E Via Buena Vista",
@@ -87,21 +102,30 @@
               "latitude": 33.5387,
               "longitude": -111.9426
             },
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "contactType": "sales",
-                "email": "Irina.Ahdoot@gmail.com",
-                "telephone": "+1-480-370-0941",
-                "availableLanguage": ["English"]
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "name": "Irina Ahdoot",
+              "email": "Irina.Ahdoot@gmail.com",
+              "telephone": "+1-480-370-0941",
+              "availableLanguage": ["English"],
+              "areaServed": {
+                "@type": "City",
+                "name": "Paradise Valley",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
               }
-            ]
+            }
           },
+          // 2. SingleFamilyResidence (property details)
           {
             "@context": "https://schema.org",
             "@type": "SingleFamilyResidence",
+            "@id": site + "/#property",
             "name": "5441 E Via Buena Vista",
-            "description": "Luxury estate in Paradise Valley with wellness guest house, resort-style amenities, and Mummy Mountain views.",
+            "description": "New construction luxury estate in Paradise Valley's prestigious Mockingbird Lane Estates. Features separate wellness guest house, resort-style pool and spa, home theater, and panoramic Mummy Mountain views. Designed by Drewett Works with interiors by Holly Wright Design.",
             "url": site + "/",
             "image": site + "/og.jpg",
             "address": {
@@ -128,8 +152,8 @@
             "yearBuilt": 2023,
             "lotSize": {
               "@type": "QuantitativeValue",
-              "value": 1.05,
-              "unitText": "acres"
+              "value": 45738,
+              "unitCode": "FTK"
             },
             "amenityFeature": [
               { "@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": true },
@@ -138,12 +162,127 @@
               { "@type": "LocationFeatureSpecification", "name": "Guest House", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Outdoor Kitchen", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Home Gym", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Sauna", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Infrared Sauna", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Steam Room", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Cold Plunge Pool", "value": true },
               { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
-              { "@type": "LocationFeatureSpecification", "name": "Smart Home", "value": true }
+              { "@type": "LocationFeatureSpecification", "name": "Smart Home System", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Climate Controlled Garage", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Butler Pantry", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Primary Suite", "value": true },
+              { "@type": "LocationFeatureSpecification", "name": "Walk-in Closets", "value": true }
+            ],
+            "additionalProperty": [
+              { "@type": "PropertyValue", "name": "Total Under Roof", "value": "11,718 sq ft" },
+              { "@type": "PropertyValue", "name": "Lot Size", "value": "1.05 acres" },
+              { "@type": "PropertyValue", "name": "Neighborhood", "value": "Mockingbird Lane Estates" },
+              { "@type": "PropertyValue", "name": "Builder", "value": "Eagle Luxury Properties" },
+              { "@type": "PropertyValue", "name": "Architect", "value": "Drewett Works" },
+              { "@type": "PropertyValue", "name": "Interior Design", "value": "Holly Wright Design" }
             ]
           },
+          // 3. FAQPage (for featured snippets)
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the price of 5441 E Via Buena Vista?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "5441 E Via Buena Vista is listed at $12,495,000. This Paradise Valley luxury estate features 8,492 square feet of living space, 6 bedrooms, 8 bathrooms, and a separate wellness guest house on 1.05 acres."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How many bedrooms does 5441 E Via Buena Vista have?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "5441 E Via Buena Vista has 6 bedrooms and 8 bathrooms. The home includes two primary suites and a separate wellness guest house with additional accommodations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What amenities does 5441 E Via Buena Vista include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "This Paradise Valley estate includes a separate wellness guest house with infrared sauna, steam room, cold plunge, and gym. Additional amenities include a resort-style pool and spa, home theater, outdoor kitchen, butler's pantry, climate-controlled garage, smart home systems, and panoramic Mummy Mountain views."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "When was 5441 E Via Buena Vista built?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "5441 E Via Buena Vista was built in 2023 by Eagle Luxury Properties. The architecture was designed by Drewett Works with interiors by Holly Wright Design and plans by The Draftery."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the lot size of 5441 E Via Buena Vista?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The property sits on 1.05 acres in Paradise Valley's exclusive Mockingbird Lane Estates neighborhood. The estate offers privacy, desert landscaping, and unobstructed Mummy Mountain views."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What schools are near 5441 E Via Buena Vista?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nearby schools include Phoenix Country Day School (private PK-12), Chaparral High School (top-rated public), Cherokee Elementary School, Brophy College Preparatory, and Notre Dame Preparatory High School."
+                }
+              }
+            ]
+          },
+          // 4. VideoObject (for hero video)
+          {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": "5441 E Via Buena Vista Video Tour - Paradise Valley Luxury Estate",
+            "description": "Cinematic video tour of 5441 E Via Buena Vista, a $12,495,000 luxury estate in Paradise Valley, Arizona featuring wellness guest house, resort amenities, and Mummy Mountain views.",
+            "thumbnailUrl": site + "/og.jpg",
+            "uploadDate": "2024-01-01",
+            "contentUrl": site + "/",
+            "embedUrl": site + "/",
+            "duration": "PT2M30S"
+          },
+          // 5. LocalBusiness (for local SEO)
+          {
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            "name": "Irina Ahdoot - Paradise Valley Luxury Real Estate",
+            "description": "Luxury real estate specialist serving Paradise Valley, Scottsdale, and Phoenix, Arizona.",
+            "url": site + "/",
+            "telephone": "+1-480-370-0941",
+            "email": "Irina.Ahdoot@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paradise Valley",
+              "addressRegion": "AZ",
+              "postalCode": "85253",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 33.5387,
+              "longitude": -111.9426
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Paradise Valley" },
+              { "@type": "City", "name": "Scottsdale" },
+              { "@type": "City", "name": "Phoenix" }
+            ],
+            "makesOffer": {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Luxury Real Estate Sales"
+              }
+            }
+          },
+          // 6. BreadcrumbList
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -151,13 +290,13 @@
               {
                 "@type": "ListItem",
                 "position": 1,
-                "name": "Arizona Luxury Real Estate",
+                "name": "Arizona Luxury Homes",
                 "item": site + "/"
               },
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Paradise Valley",
+                "name": "Paradise Valley Real Estate",
                 "item": site + "/"
               },
               {
@@ -167,6 +306,27 @@
                 "item": site + "/"
               }
             ]
+          },
+          // 7. WebPage
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": site + "/#webpage",
+            "url": site + "/",
+            "name": "5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate | MLS 6970548",
+            "description": "Paradise Valley luxury estate for sale. 8,492 sq ft, 6 bed, 8 bath on 1.05 acres with wellness guest house and Mummy Mountain views.",
+            "isPartOf": {
+              "@type": "WebSite",
+              "@id": site + "/#website",
+              "url": site + "/",
+              "name": "5441 E Via Buena Vista",
+              "publisher": {
+                "@type": "Person",
+                "name": "Irina Ahdoot"
+              }
+            },
+            "about": { "@id": site + "/#property" },
+            "mainEntity": { "@id": site + "/#listing" }
           }
         ];
         var s = document.createElement("script");
@@ -175,13 +335,105 @@
         document.head.appendChild(s);
       })();
     </script>
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.mapbox.com">
+    <link rel="dns-prefetch" href="https://api.mapbox.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate | MLS 6970548</title>
+    
+    <!-- Prerender hint for faster navigation -->
+    <link rel="prerender" href="/#contact">
+    
+    <title>5441 E Via Buena Vista | $12.495M Paradise Valley Luxury Estate for Sale | MLS 6970548</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- SEO: Crawlable content for search engines (hidden visually but accessible to crawlers) -->
+    <noscript>
+      <article itemscope itemtype="https://schema.org/RealEstateListing">
+        <header>
+          <h1 itemprop="name">5441 E Via Buena Vista - $12,495,000 Paradise Valley Luxury Estate</h1>
+          <p itemprop="description">
+            Paradise Valley luxury estate for sale. This stunning 8,492 square foot home features 6 bedrooms, 
+            8 bathrooms, and sits on 1.05 acres in the prestigious Mockingbird Lane Estates neighborhood. 
+            Built in 2023 by Eagle Luxury Properties with architecture by Drewett Works.
+          </p>
+        </header>
+        
+        <section>
+          <h2>Property Highlights</h2>
+          <ul>
+            <li>Price: $12,495,000 (MLS 6970548)</li>
+            <li>Living Space: 8,492 sq ft</li>
+            <li>Total Under Roof: 11,718 sq ft</li>
+            <li>Bedrooms: 6</li>
+            <li>Bathrooms: 8</li>
+            <li>Lot Size: 1.05 acres</li>
+            <li>Year Built: 2023</li>
+            <li>Location: Paradise Valley, AZ 85253</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Wellness Guest House</h2>
+          <p>
+            A separate wellness guest house provides a private retreat for fitness and recovery, 
+            featuring an infrared sauna, steam room, cold plunge pool, and fully equipped home gym.
+          </p>
+        </section>
+        
+        <section>
+          <h2>Resort-Style Amenities</h2>
+          <ul>
+            <li>Resort-style swimming pool and spa</li>
+            <li>Home theater and entertainment lounge</li>
+            <li>Professional outdoor kitchen</li>
+            <li>Butler's pantry for entertaining</li>
+            <li>Climate-controlled garage</li>
+            <li>Smart home automation system</li>
+            <li>Panoramic Mummy Mountain views</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Design Team</h2>
+          <p>
+            This Paradise Valley luxury home was created by an exceptional design team: 
+            Eagle Luxury Properties (builder), Drewett Works (architecture), 
+            The Draftery (plans), and Holly Wright Design (interiors).
+          </p>
+        </section>
+        
+        <section>
+          <h2>Location</h2>
+          <p>
+            Located in Paradise Valley's exclusive Mockingbird Lane Estates, this property offers 
+            proximity to world-class amenities including The Phoenician, Sanctuary Camelback Mountain 
+            Resort, TPC Scottsdale, Scottsdale Fashion Square, and top-rated schools including 
+            Phoenix Country Day School and Chaparral High School.
+          </p>
+        </section>
+        
+        <section>
+          <h2>Contact</h2>
+          <address itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
+            <p>For private showings and inquiries:</p>
+            <p itemprop="name">Irina Ahdoot</p>
+            <p>Phone: <a href="tel:+14803700941" itemprop="telephone">480-370-0941</a></p>
+            <p>Email: <a href="mailto:Irina.Ahdoot@gmail.com" itemprop="email">Irina.Ahdoot@gmail.com</a></p>
+          </address>
+        </section>
+        
+        <footer>
+          <p>5441 E Via Buena Vista, Paradise Valley, AZ 85253 | MLS 6970548 | $12,495,000</p>
+          <p>Paradise Valley Luxury Real Estate | Arizona Luxury Homes | Scottsdale Area Estates</p>
+        </footer>
+      </article>
+    </noscript>
   </body>
 </html>

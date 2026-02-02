@@ -3,7 +3,28 @@ import { PROPERTY } from '../data/property'
 
 export default function StoryChapters() {
   return (
-    <section id="story" className="py-24" aria-label="Property story and features">
+    <section id="story" className="py-24" aria-label="Property story and features" itemScope itemType="https://schema.org/SingleFamilyResidence">
+      {/* Hidden SEO content for crawlers */}
+      <div className="sr-only">
+        <h1 itemProp="name">5441 E Via Buena Vista - Paradise Valley Luxury Estate</h1>
+        <p itemProp="description">
+          $12,495,000 luxury home for sale in Paradise Valley, Arizona. This 8,492 square foot estate 
+          features 6 bedrooms, 8 bathrooms, and sits on 1.05 acres with Mummy Mountain views. 
+          Includes separate wellness guest house with infrared sauna, steam room, cold plunge, and gym. 
+          Built in 2023 by Eagle Luxury Properties. MLS 6970548.
+        </p>
+        <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+          <span itemProp="streetAddress">5441 E Via Buena Vista</span>,
+          <span itemProp="addressLocality">Paradise Valley</span>,
+          <span itemProp="addressRegion">AZ</span>
+          <span itemProp="postalCode">85253</span>
+        </div>
+        <span itemProp="numberOfBedrooms">6</span> bedrooms,
+        <span itemProp="numberOfBathroomsTotal">8</span> bathrooms,
+        <span itemProp="floorSize">8492</span> square feet,
+        built in <span itemProp="yearBuilt">2023</span>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,7 +37,7 @@ export default function StoryChapters() {
             <div className="text-xs tracking-[0.28em] uppercase text-luxury-gold mb-4">
               The buyer story
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold leading-[1.03] tracking-[-0.02em]" itemProp="headline">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold leading-[1.03] tracking-[-0.02em]">
               {PROPERTY.copy.storyTitle}
             </h2>
           </div>
@@ -91,6 +112,98 @@ export default function StoryChapters() {
             </div>
           </div>
         </div>
+
+        {/* Property Specifications - SEO Rich */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-16"
+        >
+          <div className="text-xs tracking-[0.28em] uppercase text-luxury-gold mb-4">Property Details</div>
+          <h3 className="text-3xl md:text-4xl font-display font-semibold mb-8">
+            5441 E Via Buena Vista Specifications
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: 'List Price', value: '$12,495,000' },
+              { label: 'MLS Number', value: '6970548' },
+              { label: 'Living Space', value: '8,492 sq ft' },
+              { label: 'Under Roof', value: '11,718 sq ft' },
+              { label: 'Bedrooms', value: '6' },
+              { label: 'Bathrooms', value: '8' },
+              { label: 'Lot Size', value: '1.05 acres' },
+              { label: 'Year Built', value: '2023' },
+              { label: 'Location', value: 'Paradise Valley, AZ' },
+              { label: 'Neighborhood', value: 'Mockingbird Lane Estates' },
+              { label: 'Builder', value: 'Eagle Luxury' },
+              { label: 'Architect', value: 'Drewett Works' },
+            ].map((spec) => (
+              <div key={spec.label} className="rounded-2xl border hairline bg-white/5 p-5">
+                <div className="text-xs text-white/50 uppercase tracking-wider mb-1">{spec.label}</div>
+                <div className="text-lg font-semibold text-white/90">{spec.value}</div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* FAQ Section - Great for Featured Snippets */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mt-16"
+          itemScope
+          itemType="https://schema.org/FAQPage"
+        >
+          <div className="text-xs tracking-[0.28em] uppercase text-luxury-gold mb-4">Common Questions</div>
+          <h3 className="text-3xl md:text-4xl font-display font-semibold mb-8">
+            About This Paradise Valley Estate
+          </h3>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'What makes 5441 E Via Buena Vista unique?',
+                a: 'This Paradise Valley estate features a rare combination: a separate wellness guest house with infrared sauna, steam room, cold plunge, and gym—allowing fitness and recovery to happen privately while the main home stays event-ready. Built in 2023 by a premier design team including Eagle Luxury, Drewett Works, and Holly Wright Design.',
+              },
+              {
+                q: 'What are the key amenities?',
+                a: 'The property includes a resort-style pool and spa, home theater, outdoor kitchen, butler\'s pantry, climate-controlled garage, smart home automation, two primary suites, and panoramic Mummy Mountain views from walls of glass throughout.',
+              },
+              {
+                q: 'What schools are nearby?',
+                a: 'Top schools in the area include Phoenix Country Day School (private PK-12), Chaparral High School (top-rated public), Cherokee Elementary, Brophy College Preparatory, and Notre Dame Preparatory High School.',
+              },
+              {
+                q: 'How do I schedule a private showing?',
+                a: 'Contact Irina Ahdoot at 480-370-0941 or Irina.Ahdoot@gmail.com to schedule a private tour of this Paradise Valley luxury estate.',
+              },
+            ].map((faq, i) => (
+              <details
+                key={i}
+                className="group rounded-2xl border hairline bg-white/5 overflow-hidden"
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+              >
+                <summary className="px-6 py-5 cursor-pointer list-none flex items-center justify-between text-white/90 font-semibold hover:bg-white/5 transition">
+                  <span itemProp="name">{faq.q}</span>
+                  <span className="text-luxury-gold group-open:rotate-45 transition-transform text-xl">+</span>
+                </summary>
+                <div
+                  className="px-6 pb-5 text-white/70 leading-relaxed"
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                >
+                  <p itemProp="text">{faq.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

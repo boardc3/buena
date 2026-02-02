@@ -57,9 +57,23 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* SEO Keywords Section */}
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <p className="text-white/40 text-xs leading-relaxed max-w-4xl mx-auto text-center">
+            Paradise Valley luxury real estate | Arizona luxury homes for sale | Scottsdale area estates | 
+            Mummy Mountain views | Wellness home Arizona | New construction Paradise Valley | 
+            Luxury home with guest house | Paradise Valley AZ 85253 | High-end real estate Phoenix metro | 
+            Mockingbird Lane Estates | Eagle Luxury Properties | Drewett Works architecture
+          </p>
+        </div>
+
         <div className="border-t border-white/10 pt-8 text-center text-white/45 text-sm">
           <p>
-            &copy; {currentYear} 5441 E Via Buena Vista. All rights reserved.
+            &copy; {currentYear} 5441 E Via Buena Vista | Paradise Valley Luxury Estate | MLS 6970548
+            <br />
+            <span className="text-white/35">
+              $12,495,000 | 8,492 sq ft | 6 Bed | 8 Bath | 1.05 Acres | Built 2023
+            </span>
             <br />
             Information deemed reliable but not guaranteed.
           </p>
